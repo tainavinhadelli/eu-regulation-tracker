@@ -155,6 +155,12 @@ table.src th{font-size:12.5px;color:var(--ink-3);font-weight:600}
 .tscroll{overflow-x:auto}
 code{font-size:13px;background:var(--rule-2);padding:1px 5px;border-radius:4px}
 footer{margin-top:40px;font-size:12.5px;color:var(--ink-3);max-width:80ch}
+.stag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:0 6px;border-radius:999px;vertical-align:1px;margin-left:2px}
+.stag.off{background:var(--ok-soft);color:var(--ok)}
+.stag.sec{background:var(--info-soft);color:var(--info)}
+.stag.ter{background:var(--warn-soft);color:var(--warn)}
+.prose h3{font-family:var(--sans);font-size:15px;margin:18px 0 4px}
+.prose ul{padding-left:20px}
 .chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
 /* guide */
 .gintro{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:6px}
@@ -231,7 +237,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
 <script type="application/json" id="data">
 {
   "meta": {
-    "last_updated": "2026-10-20",
+    "last_updated": "2026-11-18",
     "cadence": "Checked weekly, re-verified monthly against primary sources"
   },
   "phases": [
@@ -252,7 +258,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "color": "#0E7A86",
       "phase": 3,
       "verified": true,
-      "status_label": "Omnibus in force; simplified ESRS (2026) published 21 Sep 2026",
+      "status_label": "Revised ESRS (2026) in force since 10 Nov 2026 – apply from FY 2027",
       "stat": {
         "value": "FY 2027",
         "label": "revised ESRS apply"
@@ -260,17 +266,18 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "summary": "Omnibus I narrowed CSRD scope and kept assurance at limited level. The simplified ESRS were adopted on 3 July 2026 and published in the Official Journal on 21 September 2026.",
       "key_points": [
         "ESRS (2026) apply to financial years starting on or after 1 Jan 2027; early use for FY 2026 is allowed.",
-        "The revised ESRS (Delegated Regulation (EU) 2026/1563) enter into force on 10 November 2026 and apply from FY 2027; for FY 2026 companies may choose the old or the new version, but must say which one they use.",
+        "The revised ESRS (Delegated Regulation (EU) 2026/1563) entered into force on 10 November 2026. For FY 2026 companies may still choose the old or the new version, but must say which one they use.",
         "Member States must transpose the CSRD changes by 19 March 2027 – watch the Austrian implementation.",
-        "Austria: the NaBeG covers only former NFRD reporters so far. A further amendment (mainly of the UGB) is still needed to implement Omnibus I in full; companies with 500–1,000 employees will then drop out (WKO).",
+        "Austria: the NaBeG covers only former NFRD reporters so far. A further amendment (mainly of the UGB) is still needed to implement Omnibus I in full; companies with 500–1,000 employees will then drop out (WKO). No Austrian draft bill for the remaining Omnibus changes was found as of 18 Nov 2026 – four months before the EU deadline.",
         "Member States may exempt 'Wave 1' companies from reporting for FY 2025 and FY 2026.",
-        "Reasonable assurance is dropped; the Commission must adopt limited-assurance standards by 1 July 2027."
+        "Reasonable assurance is dropped; the Commission must adopt limited-assurance standards by 1 July 2027.",
+        "Digital tagging: EFRAG consulted on the draft XBRL taxonomy for the revised ESRS until 11 Nov 2026; the final taxonomy is still to come."
       ],
       "confidence": {
         "level": "confirmed",
         "reasoning": "Directive and revised ESRS are published law. National transposition choices (e.g. Wave 1 relief) are still open."
       },
-      "next_milestone": "Revised ESRS (2026) enter into force, 10 Nov 2026",
+      "next_milestone": "ESRS (2026) apply from FY 2027; CSRD transposition deadline 19 Mar 2027",
       "sources": [
         {
           "title": "EFRAG – revised ESRS delegated act",
@@ -279,6 +286,10 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "Covington – Omnibus published in OJ",
           "url": "https://www.cov.com/en/news-and-insights/insights/2026/02/eu-csddd-csrd-omnibus-published-in-official-journal-transposition-delegated-acts-and-guidelines-are-next"
+        },
+        {
+          "title": "BDO – EFRAG consults on ESRS XBRL taxonomy (secondary)",
+          "url": "https://www.bdo.global/en-gb/news/ifrs-news/efrag-launches-consultation-on-draft-esrs-xbrl-taxonomy"
         }
       ],
       "explainer": {
@@ -333,7 +344,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "Austria: NaBeG – BGBl. I Nr. 6/2026 (RIS)",
           "url": "https://www.ris.bka.gv.at/eli/bgbl/I/2026/6"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked EUR-Lex, EFRAG, Austrian Parliament. ESRS in force 10 Nov; no Austrian draft bill found."
+      }
     },
     {
       "id": "tax",
@@ -355,13 +370,14 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         "Reporting templates shrink by roughly two thirds for non-financial companies.",
         "The pollution 'do no significant harm' criteria on chemicals were simplified.",
         "For FY 2025 companies could choose the old or new rules (and had to say which); from FY 2026 the new rules apply.",
-        "Scope follows the CSRD – companies that drop out under Omnibus I also drop out of Taxonomy reporting."
+        "Scope follows the CSRD – companies that drop out under Omnibus I also drop out of Taxonomy reporting.",
+        "Revised technical screening criteria: the Commission published draft changes to the Climate and Environmental Delegated Acts on 17 March 2026, planned adoption by June 2026 and application from 1 Jan 2027. Adoption could not be confirmed in the Official Journal as of 18 Nov 2026 – treat the 2027 date as uncertain."
       ],
       "confidence": {
         "level": "confirmed",
-        "reasoning": "The delegated act is in force. A broader review of the technical screening criteria has been announced, so further changes are likely."
+        "reasoning": "The reporting simplification act is in force. The revision of the technical screening criteria is overdue against the Commission's own June 2026 plan, so its timing is uncertain."
       },
-      "next_milestone": "Wider review of technical criteria (no date yet)",
+      "next_milestone": "Revised technical screening criteria – adoption pending (planned application 1 Jan 2027)",
       "sources": [
         {
           "title": "Linklaters – delegated act published in OJ",
@@ -370,6 +386,10 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "HSF Kramer – delegated act enters into force",
           "url": "https://www.hsfkramer.com/notes/esg/2026-posts/omnibus-update-eu-taxonomy-delegated-act-enters-into-force"
+        },
+        {
+          "title": "Linklaters – Commission consults on simplified screening criteria (Mar 2026)",
+          "url": "https://sustainablefutures.linklaters.com/post/102mnjw/eu-commission-seeks-feedback-on-revisions-to-simplify-technical-screening-criter"
         }
       ],
       "explainer": {
@@ -403,7 +423,94 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "Simplification – Delegated Regulation (EU) 2026/73",
           "url": "https://eur-lex.europa.eu/eli/reg_del/2026/73/oj/eng"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked EUR-Lex and Commission. Screening-criteria revision still not found in the Official Journal."
+      }
+    },
+    {
+      "id": "vsme",
+      "short": "VSME / Voluntary standard",
+      "name": "Voluntary sustainability reporting standard (VSME) & value-chain cap",
+      "de": "Freiwilliger Nachhaltigkeitsstandard (VSME) & Value-Chain-Cap",
+      "ref": "Delegated Regulation (EU) 2026/1560; Commission Recommendation (EU) 2025/1710",
+      "color": "#3E8E9E",
+      "phase": 4,
+      "verified": true,
+      "status_label": "Voluntary standard in force since 24 Sep 2026 – value-chain cap applies from FY 2027",
+      "stat": {
+        "value": "1 Jan 2027",
+        "label": "value-chain cap applies"
+      },
+      "summary": "A simple, voluntary reporting standard for companies outside the CSRD, built on EFRAG's VSME. Since Omnibus I it also works as a shield: CSRD reporters may not demand more ESG data from smaller value-chain partners than the standard contains.",
+      "key_points": [
+        "EFRAG developed the VSME (Voluntary Sustainability Reporting Standard for non-listed SMEs); the Commission first issued it as Recommendation (EU) 2025/1710 in July 2025.",
+        "Delegated Regulation (EU) 2026/1560 turns it into an EU voluntary standard. Published 21 Sep 2026, in force since 24 Sep 2026. Any company not subject to CSRD reporting may use it.",
+        "Value-chain cap: for financial years from 1 Jan 2027, CSRD reporters may not require value-chain companies with up to 1,000 employees to provide more than the datapoints listed in the standard – for their CSRD reporting.",
+        "The cap does not limit requests needed for other EU or national laws (e.g. EUDR, CBAM, Batteries due diligence).",
+        "Two modules: a basic module (B1–B11: energy and GHG, pollution, water, waste, workforce, anti-corruption) and an optional comprehensive module (C1–C9, e.g. Scope 3, transition targets, human rights).",
+        "Austria: the revised CSRD rules still have to be transposed by 19 Mar 2027; the delegated regulation itself applies directly."
+      ],
+      "confidence": {
+        "level": "confirmed",
+        "reasoning": "The delegated regulation is published and in force. How strictly the value-chain cap is applied in practice – e.g. by auditors and banks – is still to be seen."
+      },
+      "next_milestone": "Value-chain cap applies, FY starting 1 Jan 2027",
+      "sources": [
+        {
+          "title": "EUR-Lex – Delegated Regulation (EU) 2026/1560",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2026/1560/oj"
+        },
+        {
+          "title": "European Commission – voluntary standard for SMEs (2025)",
+          "url": "https://finance.ec.europa.eu/publications/commission-presents-voluntary-sustainability-reporting-standard-ease-burden-smes_en"
+        },
+        {
+          "title": "Linklaters – revised ESRS and voluntary standard published (secondary)",
+          "url": "https://sustainablefutures.linklaters.com/post/102o1ou/eu-csrd-revised-esrs-and-voluntary-reporting-standard-are-published-in-the-offic"
+        },
+        {
+          "title": "Garrigues – voluntary standard and value-chain cap (secondary)",
+          "url": "https://www.garrigues.com/en_GB/new/eu-publishes-voluntary-sustainability-standard-companies-more-1000-employees-and-caps-value"
+        }
+      ],
+      "law": [
+        {
+          "title": "Voluntary standard – Delegated Regulation (EU) 2026/1560",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2026/1560/oj/eng"
+        },
+        {
+          "title": "VSME Recommendation (EU) 2025/1710",
+          "url": "https://eur-lex.europa.eu/eli/reco/2025/1710/oj/eng"
+        }
+      ],
+      "explainer": {
+        "what": "A short, voluntary sustainability reporting standard for companies that don't have to report under the CSRD – and a cap on how much ESG data large companies can demand from them.",
+        "why": "Large reporters were sending smaller suppliers long, inconsistent ESG questionnaires ('trickle-down'). One simple standard gives smaller companies a common format and limits the burden.",
+        "who": "Voluntary for any company outside CSRD scope. The cap protects value-chain companies with up to 1,000 employees; it binds CSRD reporters and the data requests they send.",
+        "core": "Basic module with key environmental, social and governance datapoints; optional comprehensive module; CSRD reporters must keep their value-chain data requests within the standard from FY 2027."
+      },
+      "group": "reporting",
+      "kind": "Voluntary standard (EU delegated act)",
+      "compliance": {
+        "applies_to": "Voluntary for companies outside CSRD. The value-chain cap is binding on CSRD reporters for data they request for their sustainability statement.",
+        "max_penalty": "No fine for not using it – voluntary",
+        "consequences": [
+          "Using the standard is voluntary; there is no penalty for not using it.",
+          "For CSRD reporters, requesting more than the cap allows breaches the reporting rules transposed into national law."
+        ],
+        "sources": [
+          {
+            "title": "EUR-Lex – Delegated Regulation (EU) 2026/1560",
+            "url": "https://eur-lex.europa.eu/eli/reg_del/2026/1560/oj"
+          }
+        ]
+      },
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked EUR-Lex. Newly added; no change since entry into force."
+      }
     },
     {
       "id": "cbam",
@@ -425,11 +532,12 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         "Certificate sales start on 1 Feb 2027 via the common central platform. Prices for 2026 imports are quarterly averages of EU ETS auction prices: Q1 €75.36, Q2 €75.28, Q3 €82.32 per tonne (published 5 Oct 2026). The Q4 price follows on 4 Jan 2027; from 2027 prices are weekly.",
         "First annual declaration and certificate surrender for 2026 imports is due by 30 Sep 2027 (moved from 31 May).",
         "From 2027, declarants must hold certificates for at least 50% of embedded emissions at each quarter-end (was 80%).",
-        "The cost phases in as free ETS allowances are withdrawn – full effect by 2034."
+        "The cost phases in as free ETS allowances are withdrawn – full effect by 2034.",
+        "Downstream extension: Commission (Dec 2025), Council (Jun 2026) and Parliament (Sep 2026) want to add about 180, 200 and 450+ steel- and aluminium-heavy downstream products (e.g. screws, wire, tubes, metal furniture). The first political trilogue on 20 Oct 2026 ended without a deal; a second is planned for 30 Nov 2026 (secondary source)."
       ],
       "confidence": {
         "level": "confirmed",
-        "reasoning": "Simplification regulation is in force and dates are fixed. Details of the certificate sales platform are still in draft."
+        "reasoning": "Simplification regulation is in force and dates are fixed. The downstream extension is still being negotiated, so the list of covered goods may grow."
       },
       "next_milestone": "Certificate sales start (expected Feb 2027)",
       "sources": [
@@ -442,12 +550,16 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "url": "https://www.bdo.global/en-gb/insights/tax/indirect-tax/european-union-amended-cbam-regulation-what-the-changes-mean-for-affected-companies"
         },
         {
-          "title": "AJOT – CBAM in 2027, certificate purchases",
+          "title": "AJOT – CBAM in 2027, certificate purchases (trade press – tertiary)",
           "url": "https://www.ajot.com/news/cbam-in-2027-importers-need-a-precise-plan-for-certificate-purchases"
         },
         {
           "title": "European Commission – CBAM",
           "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en"
+        },
+        {
+          "title": "Mayer Brown – CBAM downstream extension: road to trilogue",
+          "url": "https://www.mayerbrown.com/de/insights/publications/2026/10/eus-cbam-downstream-extension-and-anti-circumvention-amendments-the-road-to-trilogue"
         }
       ],
       "explainer": {
@@ -470,10 +582,6 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           {
             "title": "Mayer Brown – CBAM simplification",
             "url": "https://www.mayerbrown.com/en/insights/publications/2025/10/eu-adopts-cbam-simplification-regulation-10-key-amendments-and-challenges-ahead"
-          },
-          {
-            "title": "CBAM Journal – penalties 2026–2027",
-            "url": "https://www.cbamjournal.com/post/eu-cbam-penalties-2026-2027"
           }
         ]
       },
@@ -486,7 +594,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "Simplification – Regulation (EU) 2025/2083",
           "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj/eng"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked Commission, Council, law-firm reports. Downstream trilogue ongoing; certificate sales rules still draft."
+      }
     },
     {
       "id": "ets2",
@@ -507,15 +619,25 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         "Allowance auctions start on 18 January 2027 under the first ETS2 auction calendar published on 30 September 2026; monitoring and reporting by fuel suppliers has run since 2025.",
         "First surrender of allowances in 2029 for 2028 emissions.",
         "In Austria, the national CO₂ price (NEHG) continues through 2027 and is replaced by ETS2 from 2028.",
+        "Price safeguards strengthened: on 9 Oct 2026 the Council adopted the amended market stability reserve – 40 million allowances (instead of 20 million) are released if prices exceed €45 (2020 prices), and the reserve runs beyond 2030.",
+        "On 15–16 Oct 2026 EU leaders asked the Commission to update its assessment of ETS2 impacts, focusing on design and safeguards. They did not call for another delay.",
         "A price-stability mechanism releases extra allowances if prices exceed €45 (2020 prices) in the first years.",
         "For most companies the effect is indirect: higher costs for fleet fuel and fossil heating – relevant for Scope 1 reduction plans."
       ],
       "confidence": {
         "level": "high",
-        "reasoning": "The postponement is adopted law. The actual price level in 2028 is uncertain and further political pressure on the start date cannot be ruled out."
+        "reasoning": "The 2028 start and the stronger price safeguards are adopted law. EU leaders have asked for a fresh impact assessment, so further political changes to design or timing cannot be ruled out."
       },
       "next_milestone": "First ETS2 auction, 18 Jan 2027",
       "sources": [
+        {
+          "title": "Council – ETS2 market stability reserve adopted (9 Oct 2026)",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/09/ets2-council-signs-off-on-rules-strengthening-the-market-stability-reserve/"
+        },
+        {
+          "title": "European Council conclusions (16 Oct 2026)",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/16/european-council-conclusions-on-competitiveness-the-next-multiannual-financial-framework-and-enlargement-and-reforms/"
+        },
         {
           "title": "European Commission – 2027 ETS2 auction calendar published",
           "url": "https://climate.ec.europa.eu/news-other-reads/news/revised-2027-eu-ets1-and-initial-2027-eu-ets2-auction-calendars-published-2026-10-01_en"
@@ -561,7 +683,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "EU ETS Directive 2003/87/EC (ETS2: Chapter IVa)",
           "url": "https://eur-lex.europa.eu/eli/dir/2003/87/oj/eng"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked Council and European Council. MSR adopted; leaders asked for a new impact assessment."
+      }
     },
     {
       "id": "espr",
@@ -582,7 +708,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         "Recycling unsold goods counts as destruction unless one of the derogations in Delegated Regulation (EU) 2026/296 applies.",
         "Medium-sized enterprises are covered from 19 July 2030; micro and small enterprises are exempt.",
         "Large companies already have to disclose unsold products discarded; a standardised disclosure format (Implementing Regulation (EU) 2026/2) applies from February 2027.",
-        "The working plan prioritises textiles, furniture, tyres, mattresses, iron, steel and aluminium; the textiles act is expected in 2027."
+        "The working plan prioritises textiles, furniture, tyres, mattresses, iron, steel and aluminium; the textiles act is expected in 2027.",
+        "Iron and steel: the Commission's call for evidence (May 2026) announced a delegated act on carbon footprint, recycled content and product passports for Q4 2026. Not adopted as of 18 Nov 2026."
       ],
       "confidence": {
         "level": "confirmed",
@@ -597,6 +724,10 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "Anthesis – destruction ban overview",
           "url": "https://www.anthesisgroup.com/insights/espr-the-ban-on-destruction-of-unsold-goods/"
+        },
+        {
+          "title": "European Commission – iron & steel product passport (ESPR)",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/iron-steel_en"
         }
       ],
       "explainer": {
@@ -617,8 +748,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         ],
         "sources": [
           {
-            "title": "Carbonfact – ESPR for textiles",
-            "url": "https://www.carbonfact.com/blog/policy/espr-textile"
+            "title": "EUR-Lex – official law text (ESPR – Regulation (EU) 2024/1781)",
+            "url": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng"
           }
         ]
       },
@@ -635,7 +766,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "Disclosure format – Implementing Regulation (EU) 2026/2",
           "url": "https://eur-lex.europa.eu/eli/reg_impl/2026/2/oj/eng"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked Commission. Iron & steel act not yet adopted."
+      }
     },
     {
       "id": "ppwr",
@@ -646,7 +781,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "color": "#2F6FB2",
       "phase": 5,
       "verified": true,
-      "status_label": "Applies since 12 Aug 2026 – key implementing acts delayed",
+      "status_label": "Applies since 12 Aug 2026 – authorised-representative relief in trilogue; labelling act slips to 2027",
       "stat": {
         "value": "12 Aug 2026",
         "label": "general application date"
@@ -654,28 +789,36 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "summary": "Directly applicable in all Member States since 12 August 2026. No postponement was adopted, but several implementing and delegated acts that fill in the detail are late, notably harmonised labelling.",
       "key_points": [
         "Packaging placed on the EU market since 12 Aug 2026 must comply; there is no general grace period for existing stock.",
-        "The labelling implementing act missed its August 2026 deadline and was still not adopted by mid-October; it is expected in Q4 2026. The label rules then apply 24 months after it enters into force.",
+        "The labelling implementing act missed its August 2026 deadline. Trade press now reports it for Q2 2027 instead of Q4 2026 (secondary source). The label rules apply 24 months after it enters into force.",
+        "Authorised-representative duty (Art. 45(3)) still applies. Parliament (Oct 2026) wants to suspend it for EU-based micro and small enterprises until 2035. The Council (21 Oct 2026) wants a narrower relief: EU producers placing less than 1 tonne of packaging a year in another Member State, until 2032. Trilogue had not started by mid-November – don't plan on the relief yet.",
         "The heavier design rules (recyclability grades, minimisation, max. 50% empty space in transport and e-commerce packaging) mostly start from 2030.",
-        "Authorised-representative duty (Art. 45(3)) still applies. On 5 Oct 2026 Parliament's environment committee backed a suspension only for EU-based micro and small enterprises (74–0–4); the plenary vote was scheduled for 19–22 Oct, then talks with the Council follow. Austria, Czechia and Estonia tabled ideas for small producers at the 12 Oct Environment Council (secondary sources).",
         "Around 30 delegated and implementing acts are still to come."
       ],
       "confidence": {
         "level": "confirmed",
         "reasoning": "Core obligations are final law and already apply. Detail on labelling and substances documentation is still missing, so implementation specifics could shift."
       },
-      "next_milestone": "Parliament plenary on authorised-representative relief (Oct 2026); labelling act (Q4 2026)",
+      "next_milestone": "Trilogue on authorised-representative relief; labelling act (now expected Q2 2027)",
       "sources": [
+        {
+          "title": "Council – negotiating stance for small packaging producers (21 Oct 2026)",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/21/simplification-council-agrees-negotiating-stance-to-cut-red-tape-for-small-packaging-producers/"
+        },
         {
           "title": "EUROPEN – PPWR application and delayed acts",
           "url": "https://www.europen-packaging.eu/news/12-august-2026-ready-or-not-here-comes-the-ppwr/"
         },
         {
-          "title": "Packaging Europe – labelling deadline missed",
+          "title": "Packaging Europe – labelling deadline missed (trade press – tertiary)",
           "url": "https://packagingeurope.com/news/eu-commission-misses-deadline-to-harmonize-ppwrs-labelling-requirements/14631.article"
         },
         {
           "title": "Packaging Journal – ENVI vote on authorised representative (secondary source)",
           "url": "https://packaging-journal.de/en/the-requirement-of-a-representative-for-small-businesses-should-be-relaxed/"
+        },
+        {
+          "title": "packaging journal – PPWR monitoring 13 Nov 2026 (trade press – tertiary)",
+          "url": "https://packaging-journal.de/ppwr-monitoring-13-11-2026/"
         }
       ],
       "explainer": {
@@ -691,13 +834,12 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         "max_penalty": "Set by each Member State; withdrawal of non-compliant packaging",
         "consequences": [
           "Member States set the penalties; market surveillance can require corrective action or take non-compliant packaging off the market.",
-          "The Commission's FAQ describes a transition based on corrective action and reasonable adaptation periods rather than immediate bans.",
           "Producers not registered under extended producer responsibility may not make packaging available in that country."
         ],
         "sources": [
           {
-            "title": "Lappa – PPWR 2026 and Commission FAQ",
-            "url": "https://lappa.org/blog/ppwr/what-you-need-to-know-about-ppwr-2026-postponement/"
+            "title": "EUR-Lex – official law text (PPWR – Regulation (EU) 2025/40)",
+            "url": "https://eur-lex.europa.eu/eli/reg/2025/40/oj/eng"
           }
         ]
       },
@@ -706,7 +848,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "PPWR – Regulation (EU) 2025/40",
           "url": "https://eur-lex.europa.eu/eli/reg/2025/40/oj/eng"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked Council, Parliament, trade press. Relief not yet agreed; labelling act delayed."
+      }
     },
     {
       "id": "batt",
@@ -728,7 +874,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         "QR code on all batteries and the digital battery passport (EV, LMT, industrial > 2 kWh) from 18 Feb 2027.",
         "Portable batteries must be removable and replaceable by the end user from 18 Feb 2027.",
         "Supply-chain due diligence (companies > €40m turnover) postponed to 18 Aug 2027 by Regulation (EU) 2025/1561.",
-        "The EU Digital Product Passport registry has been operational since 20 July 2026. The Commission missed its 18 Aug 2026 deadline for the act defining who may access restricted passport data; it is now listed for Q4 2026 (secondary source). The label-format act was also still not adopted."
+        "The EU Digital Product Passport registry has been operational since 20 July 2026. The Commission missed its 18 Aug 2026 deadline for the act defining who may access restricted passport data; it is now listed for Q4 2026 (secondary source). The label-format act was also still not adopted.",
+        "Passport access rights: the Commission consulted on a draft implementing act deciding who may see restricted passport data (e.g. repair and recycling information) until 16 Nov 2026; adoption is planned for Q4 2026 (secondary source)."
       ],
       "confidence": {
         "level": "high",
@@ -747,6 +894,10 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "European Commission – Battery passport timeline",
           "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
+        },
+        {
+          "title": "LexisNexis – Commission consults on battery passport access rights (20 Oct 2026)",
+          "url": "https://www.lexisnexis.co.uk/legal/news/commission-consults-on-draft-implementing-regulation-on-access-rights-to-digital-battery-passports"
         }
       ],
       "explainer": {
@@ -766,8 +917,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         ],
         "sources": [
           {
-            "title": "Certivo – Battery Regulation labelling and penalties",
-            "url": "https://www.certivo.com/blog-details/eu-battery-regulation-labelling-2026-capacity-chemistry-and-hazardous-substance-rules"
+            "title": "EUR-Lex – official law text (Batteries Regulation (EU) 2023/1542)",
+            "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
           }
         ]
       },
@@ -780,7 +931,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "Due diligence postponement – Regulation (EU) 2025/1561",
           "url": "https://eur-lex.europa.eu/eli/reg/2025/1561/oj/eng"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked Commission and law-firm reports. Access-rights act consulted; label act still pending."
+      }
     },
     {
       "id": "r2r",
@@ -858,7 +1013,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "Austria: WaRUG – BGBl. I Nr. 60/2026 (RIS)",
           "url": "https://www.ris.bka.gv.at/Dokumente/BgblAuth/BGBLA_2026_I_60/BGBLA_2026_I_60.pdf"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked RIS/WKO and EUR-Lex. No change found."
+      }
     },
     {
       "id": "eudr",
@@ -877,16 +1036,21 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "summary": "After two postponements and a December 2025 revision, the Commission's May 2026 simplification review confirmed there will be no further delay. Large and medium operators must comply from 30 December 2026.",
       "key_points": [
         "Covers cattle, cocoa, coffee, palm oil, rubber, soy and wood plus derived products.",
+        "Product scope adjusted by Delegated Regulation (EU) 2026/2102 (published 17 Sep 2026): cattle hides, skins and leather, some rubber articles and soybean seeds for sowing are out. Soluble coffee, frozen cattle tongues, certain palm-oil derivatives and some soaps come in from 30 Dec 2027.",
         "Micro and small operators outside the timber sector follow on 30 June 2027.",
         "Downstream operators are eased: only the first operator placing a product on the market files the due diligence statement; downstream ones pass on the reference number.",
-        "A draft delegated act would adjust product scope (the Commission proposed removing leather)."
+        "The information system rules were updated in July 2026 (Implementing Regulation (EU) 2026/1565): simplified declarations for micro and small primary operators and grouping of statements."
       ],
       "confidence": {
         "level": "high",
-        "reasoning": "The date is law and the Commission has publicly ruled out another extension. The scope delegated act is still pending, so product coverage could change at the edges."
+        "reasoning": "The date is law, the Commission has ruled out another extension and the product-scope act is now published. Some detail on the information system and enforcement practice is still settling."
       },
       "next_milestone": "Application for large & medium operators, 30 Dec 2026",
       "sources": [
+        {
+          "title": "EUR-Lex – Delegated Regulation (EU) 2026/2102 (product scope)",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2026/2102/oj"
+        },
         {
           "title": "Council – revision adopted (Dec 2025)",
           "url": "https://www.consilium.europa.eu/en/press/press-releases/2025/12/18/deforestation-council-signs-off-targeted-revision-to-simplify-and-postpone-the-regulation/"
@@ -894,12 +1058,16 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "Hogan Lovells – May 2026 simplification package",
           "url": "https://www.hoganlovells.com/en/publications/eu-deforestation-regulation-commission-publishes-simplification-package-ahead-of-december-2026"
+        },
+        {
+          "title": "Linklaters – delegated act on product scope",
+          "url": "https://sustainablefutures.linklaters.com/post/102nbwv/eu-deforestation-regulation-commission-adopts-delegated-act-on-product-scope-and"
         }
       ],
       "explainer": {
         "what": "A due diligence law ensuring certain commodities sold in or exported from the EU are deforestation-free and legally produced.",
         "why": "EU consumption is a major driver of global deforestation. Voluntary commitments had not stopped it.",
-        "who": "Operators and traders placing cattle, cocoa, coffee, palm oil, rubber, soy, wood and derived products (e.g. paper, printed matter, furniture) on the market.",
+        "who": "Operators and traders placing cattle, cocoa, coffee, palm oil, rubber, soy, wood and derived products (e.g. chocolate, furniture, timber products) on the market. Printed paper products (Dec 2025) and leather (Sep 2026) are no longer covered.",
         "core": "Collect geolocation data, assess and mitigate risk, submit a due diligence statement before placing products on the market."
       },
       "group": "supply",
@@ -915,10 +1083,6 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         ],
         "sources": [
           {
-            "title": "Coolset – EUDR penalties",
-            "url": "https://www.coolset.com/academy/eudr-penalties-what-non-compliance-actually-costs-fines-bans-criminal-liability"
-          },
-          {
             "title": "White & Case – EUDR adopted",
             "url": "https://www.whitecase.com/insight-alert/eu-adopts-new-rules-deforestation-free-products"
           }
@@ -932,8 +1096,16 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "Amendment – Regulation (EU) 2025/2650",
           "url": "https://eur-lex.europa.eu/eli/reg/2025/2650/oj/eng"
+        },
+        {
+          "title": "Scope change – Delegated Regulation (EU) 2026/2102",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2026/2102/oj"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked EUR-Lex and Commission. Scope act recorded (published Sep); no further delay."
+      }
     },
     {
       "id": "csddd",
@@ -1002,7 +1174,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "Omnibus I amendment – Directive (EU) 2026/470",
           "url": "https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked EUR-Lex and Commission. No change found."
+      }
     },
     {
       "id": "flr",
@@ -1073,7 +1249,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "Forced Labour Regulation (EU) 2024/3015",
           "url": "https://eur-lex.europa.eu/eli/reg/2024/3015/oj/eng"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked Commission FLR page. No change; risk database status still open."
+      }
     },
     {
       "id": "empco",
@@ -1094,7 +1274,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         "Generic claims such as 'eco-friendly' or 'climate friendly' are banned unless recognised excellent environmental performance can be shown.",
         "Austria: products already on the market before 27 Sep 2026 get a three-year exemption from private enforcement (new § 44 (16) UWG). This does not make them lawful. Greenpeace and ÖKOBÜRO have filed an EU complaint arguing the clause breaches EU law.",
         "The consumer-information parts (durability, repair, warranty) are transposed separately in Austria via FAGG and KSchG.",
-        "In May 2026 the Commission opened infringement procedures against Member States that had not transposed; missed transposition does not delay application."
+        "In May 2026 the Commission opened infringement procedures against Member States that had not transposed; missed transposition does not delay application.",
+        "On 30 Jun 2026 the EU consumer protection authorities (CPC network) agreed a common approach: when the rules start, they will take stock levels and shelf-life into account and may first give guidance before sanctions. This is not binding on courts or competitors."
       ],
       "confidence": {
         "level": "confirmed",
@@ -1113,6 +1294,10 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "WKO Tirol – EmpCo and the UWG amendment",
           "url": "https://www.wko.at/tirol/information-consulting/werbung-marktkommunikation/gruen-ist-keine-farbe-mehr-das-greenwashing-verbot-empco"
+        },
+        {
+          "title": "European Commission – CPC common understanding (30 Jun 2026)",
+          "url": "https://luxembourg.representation.ec.europa.eu/actualites-et-evenements/actualites/commission-welcomes-common-understanding-national-consumer-protection-authorities-fair-and-simple-2026-06-30_fr"
         }
       ],
       "explainer": {
@@ -1155,7 +1340,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "Austria: UWG amendment – BGBl. I Nr. 58/2026 (RIS)",
           "url": "https://www.ris.bka.gv.at/eli/bgbl/I/2026/58"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked Commission, RIS, WKO. No Commission reply on the Austrian complaint found."
+      }
     },
     {
       "id": "gcd",
@@ -1166,45 +1355,55 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "color": "#8A8F9C",
       "phase": 1,
       "verified": true,
-      "status_label": "On hold since June 2025 – not formally withdrawn",
+      "status_label": "Withdrawal announced 4 Nov 2026 (Commission Work Programme 2027)",
       "stat": {
-        "value": "On hold",
-        "label": "since 20 Jun 2025"
+        "value": "Withdrawn",
+        "label": "announced 4 Nov 2026"
       },
-      "summary": "The Commission announced its intention to withdraw the proposal in June 2025 and the final trilogue was cancelled. It remains formally pending but nothing has moved since.",
+      "summary": "On 4 November 2026 the Commission listed the Green Claims proposal among 18 pending proposals it intends to withdraw (Work Programme 2027, Annex III). It says the file has no realistic chance of Council support. The withdrawal becomes final once the Commission formally decides, after hearing Parliament and Council – expected within six months.",
       "key_points": [
-        "Would have required third-party verification of environmental claims before use.",
-        "Does not affect EmpCo, which applies anyway from 27 Sep 2026."
+        "Would have required third-party verification of environmental claims before use – this will not come.",
+        "Listed in Annex III of the Commission Work Programme 2027 (4 Nov 2026): withdrawal intended within six months; Parliament and Council can still comment first.",
+        "Reason given: the Council never agreed a negotiating mandate and attempts in 2025 to move the file failed.",
+        "Greenwashing rules still apply through EmpCo (since 27 Sep 2026; in Austria via the UWG) – the withdrawal does not make vague green claims legal again."
       ],
       "confidence": {
-        "level": "low",
-        "reasoning": "Negotiations are dormant; revival is possible but there is no signal of it."
+        "level": "high",
+        "reasoning": "The Commission has formally announced the withdrawal in its work programme. Only the final formal decision is pending; a revival is very unlikely."
       },
-      "next_milestone": "None scheduled",
+      "next_milestone": "Formal withdrawal decision (expected by May 2027)",
       "sources": [
         {
-          "title": "CMS – where are we now",
-          "url": "https://cms.law/en/aut/legal-updates/the-eu-green-claims-directive-where-are-we-now-and-what-s-next"
+          "title": "European Commission – Work Programme 2027 and annexes",
+          "url": "https://commission.europa.eu/publications/2027-commission-work-programme-and-annexes_en"
+        },
+        {
+          "title": "European Commission – Q&A on Work Programme 2027",
+          "url": "https://ec.europa.eu/commission/presscorner/detail/en/QANDA_26_2322"
+        },
+        {
+          "title": "Lewis Silkin – the Green Claims Directive is dead (secondary)",
+          "url": "https://www.lewissilkin.com/insights/2026/11/07/the-green-claims-directive-is-dead-but-what-will-be-the-net-effect-of-zero-toler-102o8n1"
         }
       ],
       "explainer": {
         "what": "A proposed directive that would have required environmental claims to be substantiated and verified by a third party before use.",
         "why": "To complement EmpCo with clear methods for proving claims.",
-        "who": "Would apply to companies making explicit environmental claims to consumers (micro-enterprises exempt).",
-        "core": "On hold since June 2025 – no obligations. EmpCo applies regardless."
+        "who": "Would have applied to companies making explicit environmental claims to consumers. The proposal is being withdrawn.",
+        "core": "Withdrawal announced in November 2026 – no obligations will follow. EmpCo applies regardless."
       },
       "group": "claims",
       "kind": "Proposal",
       "compliance": {
-        "applies_to": "Would apply to companies making explicit environmental claims to consumers (micro-enterprises exempt). Not in force.",
-        "max_penalty": "None – proposal on hold",
+        "applies_to": "No one – the proposal is being withdrawn (announced 4 Nov 2026).",
+        "max_penalty": "None – proposal withdrawn",
         "consequences": [
-          "No obligations or penalties while the proposal is on hold. Greenwashing is already sanctioned through EmpCo."
+          "No obligations or penalties. Greenwashing is sanctioned through EmpCo (in Austria: UWG)."
         ],
         "sources": [
           {
-            "title": "CMS – Green Claims status",
-            "url": "https://cms.law/en/aut/legal-updates/the-eu-green-claims-directive-where-are-we-now-and-what-s-next"
+            "title": "European Commission – Work Programme 2027 and annexes",
+            "url": "https://commission.europa.eu/publications/2027-commission-work-programme-and-annexes_en"
           }
         ]
       },
@@ -1213,7 +1412,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "Proposal COM(2023) 166",
           "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023PC0166"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked Commission Work Programme 2027. Withdrawal announced 4 Nov."
+      }
     },
     {
       "id": "ghgp",
@@ -1241,9 +1444,10 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "key_points": [
         "The merged standard combines the Corporate Standard, Scope 2 Guidance, Scope 3 Standard and the new Actions & Market Instruments (AMI) work with ISO 14064-1.",
         "Planned structure: Part 1 = physical GHG inventory; Part 2 = actions and market instruments (e.g. renewable certificates, offsets). Structure may still change.",
-        "Scope 2: the first consultation drew nearly 1,100 responses. Proposals keep dual location- and market-based reporting but add hourly matching and deliverability requirements for market-based figures.",
+        "Scope 2: after nearly 1,100 consultation responses, the standards board's interim direction (Sep–Nov 2026) is two market-based methods – a new one with hourly matching and deliverability, and the current 2015 method, which stays available during a transition. Large users would move first; thresholds, dates and the treatment of existing contracts are still open.",
         "Scope 3: proposals would tighten how exclusions are justified and how supplier data quality is reported.",
-        "Changes only become binding for CSRD reporters once ESRS refers to the new version – that will take additional time."
+        "Changes only become binding for CSRD reporters once ESRS refers to the new version – that will take additional time.",
+        "Land Sector and Removals Standard (published Jan 2026) becomes effective on 1 Jan 2027 – relevant for companies with land-use emissions or CO₂ removals in their inventory, e.g. agriculture, food and forestry value chains."
       ],
       "confidence": {
         "level": "medium",
@@ -1251,6 +1455,14 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       },
       "next_milestone": "Integrated public consultation, Q2 2027",
       "sources": [
+        {
+          "title": "GHG Protocol – Scope 2 market-based method: current status (16 Oct 2026)",
+          "url": "https://ghgprotocol.org/blog/scope-2-market-based-method-update-2025-2026-public-consultation-current-status"
+        },
+        {
+          "title": "GHG Protocol – Scope 2 workshop outcomes (10 Nov 2026)",
+          "url": "https://ghgprotocol.org/sites/default/files/2026-11/Scope2-Workshop-Outcomes-Overview-2026.11.10.pdf"
+        },
         {
           "title": "GHG Protocol – key standard development updates",
           "url": "https://ghgprotocol.org/blog/ghg-protocol-announces-key-standard-development-updates"
@@ -1260,8 +1472,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "url": "https://ghgprotocol.org/blog/ghg-protocol-announces-key-standard-development-updates-faq-resource"
         },
         {
-          "title": "Terrascope – inside the GHG Protocol and ISO merger",
-          "url": "https://www.terrascope.com/blog/ghg-protocol-and-iso-merger"
+          "title": "GHG Protocol – Land Sector and Removals Standard",
+          "url": "https://ghgprotocol.org/land-sector-and-removals-standard"
         }
       ],
       "explainer": {
@@ -1282,8 +1494,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         ],
         "sources": [
           {
-            "title": "Terrascope – GHG Protocol and ISO merger",
-            "url": "https://www.terrascope.com/blog/ghg-protocol-and-iso-merger"
+            "title": "GHG Protocol Corporate Standard (official text)",
+            "url": "https://ghgprotocol.org/corporate-standard"
           }
         ]
       },
@@ -1300,7 +1512,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "Scope 3 Standard",
           "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked GHG Protocol news and meeting documents. Scope 2 interim direction recorded."
+      }
     },
     {
       "id": "iso14001",
@@ -1330,7 +1546,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         "Stronger focus on environmental performance, resource conservation and life-cycle thinking.",
         "New clause on planning changes to the management system (6.3).",
         "Terminology update: 'meet' compliance obligations instead of 'fulfil'.",
-        "Certificates to the 2015 edition lose validity after the three-year transition; certification bodies quote end of April or May 2029."
+        "Certificates to the 2015 edition lose validity after the three-year transition; certification bodies quote end of April or May 2029.",
+        "Accreditation bodies are now approving certification bodies for the 2026 edition (UKAS: first decisions 30 Oct 2026). New certifications to the 2015 edition stop by 31 Oct 2027; existing ones must move by 30 Apr 2029."
       ],
       "confidence": {
         "level": "confirmed",
@@ -1345,6 +1562,10 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "SGS – key updates and transition guidance",
           "url": "https://www.sgs.com/en/showcases/iso-14001-2026-key-updates-and-transition-guidance"
+        },
+        {
+          "title": "UKAS – ISO 14001:2026 transition bulletin (7 Oct 2026)",
+          "url": "https://www.ukas.com/resources/technical-bulletins/ems-iso-14001-2026-transition/"
         }
       ],
       "explainer": {
@@ -1375,7 +1596,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "ISO 14001 – iso.org (full text must be purchased from ISO or Austrian Standards)",
           "url": "https://www.iso.org/iso-14001-environmental-management.html"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked accreditation and certification bodies. Transition dates confirmed."
+      }
     },
     {
       "id": "weee",
@@ -1388,7 +1613,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "kind": "Directive",
       "phase": 4,
       "verified": true,
-      "status_label": "Applies – revision expected with the Circular Economy Act, which is delayed",
+      "status_label": "Applies – Circular Economy Act (incl. WEEE revision) missed 11 and 18 Nov; now listed for 2 Dec 2026",
       "stat": {
         "value": "End 2026",
         "label": "legal deadline to assess a revision"
@@ -1397,15 +1622,16 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "key_points": [
         "Producers (manufacturers, importers and distance sellers) must register in each country where they sell and finance take-back and recycling.",
         "The Commission's evaluation found that nearly half of all e-waste is not collected; the revision is meant to fix collection and recycling.",
-        "The Circular Economy Act, which should contain the WEEE revision, missed its Q3 2026 target. The Commission's provisional timetable now lists it for 11 November 2026, after the Regulatory Scrutiny Board criticised the impact assessment (reported by trade press – secondary source).",
+        "The Circular Economy Act, which should contain the WEEE revision, missed its Q3 2026 target and the planned dates of 11 and 18 November. The Commission's indicative agenda (10 Nov) now lists it for 2 December 2026 – still not confirmed (secondary source).",
         "Directive (EU) 2024/884 obliges the Commission to assess a revision and, where appropriate, propose one by 31 December 2026.",
-        "Austria: implemented through the AWG 2002 and the Elektroaltgeräteverordnung (EAG-VO)."
+        "Austria: implemented through the AWG 2002 and the Elektroaltgeräteverordnung (EAG-VO).",
+        "Commissioner Roswall (13 Nov 2026) outlined the act: one EU-wide EPR registration and representative instead of one per country, harmonised end-of-waste criteria and stronger e-waste collection to recover critical raw materials."
       ],
       "confidence": {
         "level": "high",
         "reasoning": "Current obligations are settled law. What the revision will contain – and whether it becomes a regulation – is still open until the proposal is published."
       },
-      "next_milestone": "Circular Economy Act proposal incl. WEEE revision (planned 11 Nov 2026)",
+      "next_milestone": "Circular Economy Act proposal – listed for 2 Dec 2026 (not confirmed)",
       "sources": [
         {
           "title": "EP Legislative Train – Circular Economy Act",
@@ -1422,6 +1648,14 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "EUWID – CEA expected 11 November (secondary source)",
           "url": "https://www.euwid-recycling.com/news/markets/circular-economy-act-proposal-expected-on-11-november-061026/"
+        },
+        {
+          "title": "packaging journal – Commission agenda lists CEA for 2 Dec (trade press – tertiary)",
+          "url": "https://packaging-journal.de/ppwr-monitoring-13-11-2026/"
+        },
+        {
+          "title": "EUWID – Circular Economy Act postponed again (20 Oct 2026) (trade press – tertiary)",
+          "url": "https://www.euwid-recycling.com/news/policy/eu-circular-economy-act-postponed-once-again"
         }
       ],
       "explainer": {
@@ -1453,7 +1687,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "Austria: AWG 2002, current version (RIS)",
           "url": "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20002086"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked Commission agenda reports. Circular Economy Act not yet presented."
+      }
     },
     {
       "id": "rohs",
@@ -1476,7 +1714,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         "Applies to all electrical and electronic equipment unless specifically excluded, and is shown through the CE marking.",
         "Key expiry: under Delegated Directive (EU) 2025/2364, exemption 6(a) (lead up to 0.35% in machining and galvanised steel) and 6(b)-I (lead in recycled aluminium, categories 1–7 and 10) expire on 11 December 2026.",
         "Directive (EU) 2025/2456 moves the assessment of exemptions and new substance restrictions from the Commission to ECHA – exemption applications now go to ECHA.",
-        "A further draft delegated directive renewing and revising many lead and cadmium exemptions was notified to the WTO in July 2026. Adoption was expected in Q3 2026 but had not been reported by mid-October (secondary source).",
+        "A further draft delegated directive renewing and revising many lead and cadmium exemptions was notified to the WTO in July 2026. Adoption was expected in Q3 2026 but had still not been reported by 18 Nov 2026 (secondary source).",
         "A wider 'RoHS 3' recast has been discussed but no proposal has been adopted."
       ],
       "confidence": {
@@ -1492,10 +1730,6 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "EUR-Lex – Directive 2011/65/EU",
           "url": "https://eur-lex.europa.eu/legal-content/En/TXT/?uri=celex%3A32011L0065"
-        },
-        {
-          "title": "GPC Gateway – lead/cadmium exemptions (secondary source)",
-          "url": "https://gpcgateway.com/news/detail/eu-proposes-extensive-revisions-to-rohs-lead-and-cadmium-exemptions/MjYwNQ=="
         },
         {
           "title": "SGS – RoHS exemptions updated",
@@ -1517,8 +1751,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         ],
         "sources": [
           {
-            "title": "Compliance Atlas – RoHS enforcement (secondary source)",
-            "url": "https://compliance-atlas.com/topics/rohs"
+            "title": "EUR-Lex – official law text (RoHS Directive 2011/65/EU)",
+            "url": "https://eur-lex.europa.eu/eli/dir/2011/65/oj/eng"
           }
         ]
       },
@@ -1535,7 +1769,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "Lead in alloys – Delegated Directive (EU) 2025/2364",
           "url": "https://eur-lex.europa.eu/eli/dir_del/2025/2364/oj/eng"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked EUR-Lex. Exemption update still not adopted."
+      }
     },
     {
       "id": "reach",
@@ -1609,7 +1847,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "PFHxA restriction – Regulation (EU) 2024/2462",
           "url": "https://eur-lex.europa.eu/eli/reg/2024/2462/oj/eng"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked EUR-Lex and ECHA. No new restriction affecting the entry; PFAS opinion still due end 2026."
+      }
     },
     {
       "id": "fgas",
@@ -1642,12 +1884,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "next_milestone": "HFC quota cut for 2027–2029, 1 Jan 2027",
       "sources": [
         {
-          "title": "Compliance & Risks – new F-gas Regulation",
-          "url": "https://www.complianceandrisks.com/blog/regulation-eu-2024-573-european-commission-adopts-new-f-gas-regulation/"
-        },
-        {
-          "title": "General Gas – quota and bans",
-          "url": "https://www.generalgas.eu/f-gas.html"
+          "title": "EUR-Lex – official law text (F-gas Regulation (EU) 2024/573)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/573/oj/eng"
         }
       ],
       "explainer": {
@@ -1665,8 +1903,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         ],
         "sources": [
           {
-            "title": "Compliance & Risks – F-gas Regulation",
-            "url": "https://www.complianceandrisks.com/blog/regulation-eu-2024-573-european-commission-adopts-new-f-gas-regulation/"
+            "title": "EUR-Lex – official law text (F-gas Regulation (EU) 2024/573)",
+            "url": "https://eur-lex.europa.eu/eli/reg/2024/573/oj/eng"
           }
         ]
       },
@@ -1675,7 +1913,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "F-gas Regulation (EU) 2024/573",
           "url": "https://eur-lex.europa.eu/eli/reg/2024/573/oj/eng"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked Commission F-gas pages and EUR-Lex. No change found."
+      }
     },
     {
       "id": "eed",
@@ -1698,7 +1940,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         "Companies averaging more than 10 TJ (≈2.78 GWh) a year over the last three years need a first energy audit by 11 October 2026 and then every four years – unless they run a certified energy management system.",
         "Companies above 85 TJ (≈23.6 GWh) must have a certified energy management system (e.g. ISO 50001) by 11 October 2027.",
         "A certified environmental management system (ISO 14001, EMAS) counts if it includes an energy audit meeting the directive's minimum criteria.",
-        "Austria: the current EEffG (2023) still requires large companies to do an audit or run a management system every four years; the amendment implementing EED III is late (WKO, June 2026).",
+        "Austria: the current EEffG (2023) still requires large companies to do an audit or run a management system every four years. On 5 Nov 2026 WKO still described the amendment implementing EED III as upcoming – it has not been adopted.",
         "Thresholds count all energy carriers together – fleet fuel, heating and electricity add up quickly."
       ],
       "confidence": {
@@ -1722,6 +1964,10 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "RIS – Bundes-Energieeffizienzgesetz, current version",
           "url": "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20008914"
+        },
+        {
+          "title": "WKO – Energieeffizienzgesetz-Novelle 2026 (Nov 2026)",
+          "url": "https://www.wko.at/transport-verkehr/energieeffizienzgesetz-novelle-2026"
         }
       ],
       "explainer": {
@@ -1753,7 +1999,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "Austria: EEffG amendment – BGBl. I Nr. 59/2023 (RIS)",
           "url": "https://www.ris.bka.gv.at/eli/bgbl/I/2023/59"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked RIS and WKO. Austrian EEffG amendment still pending."
+      }
     },
     {
       "id": "wfd",
@@ -1822,7 +2072,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "2025 revision – Directive (EU) 2025/1892",
           "url": "https://eur-lex.europa.eu/eli/dir/2025/1892/oj/eng"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked EUR-Lex and BMLUK. No change found."
+      }
     },
     {
       "id": "textepr",
@@ -1888,7 +2142,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "Directive (EU) 2025/1892 (textile EPR)",
           "url": "https://eur-lex.europa.eu/eli/dir/2025/1892/oj/eng"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked BMLUK. Austrian scheme still in study phase; no draft law found."
+      }
     },
     {
       "id": "awg",
@@ -1958,10 +2216,104 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           "title": "AWG 2002, current version (RIS)",
           "url": "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20002086"
         }
-      ]
+      ],
+      "check": {
+        "date": "2026-11-18",
+        "note": "Checked RIS and BMLUK. No AWG amendment published yet."
+      }
     }
   ],
   "updates": [
+    {
+      "date": "2026-11-13",
+      "reg": "weee",
+      "significance": "medium",
+      "headline": "Circular Economy Act slips again – now listed for 2 December",
+      "detail": "The proposal missed both 11 and 18 November. The Commission's indicative agenda of 10 November lists it for 2 December, but the date can still change. On 13 November Commissioner Roswall outlined its core: one EU-wide producer-responsibility registration, harmonised end-of-waste rules and stronger e-waste collection. Reported by trade press so far.",
+      "so_what": "No new WEEE or EPR duties yet. Keep registering per country for now, but expect one-stop EPR registration to be proposed.",
+      "source_url": "https://packaging-journal.de/ppwr-monitoring-13-11-2026/",
+      "source_title": "packaging journal (trade press – tertiary)"
+    },
+    {
+      "date": "2026-11-13",
+      "reg": "ppwr",
+      "significance": "low",
+      "headline": "PPWR labelling act now expected only in Q2 2027",
+      "detail": "The harmonised sorting-label act, originally due in August 2026 and then expected in Q4 2026, is now reported for Q2 2027. Label rules apply 24 months after it enters into force. This is reported by trade press, not yet confirmed by the Commission.",
+      "so_what": "Keep current labels. Plan artwork changes for 2029 at the earliest.",
+      "source_url": "https://packaging-journal.de/ppwr-monitoring-13-11-2026/",
+      "source_title": "packaging journal (trade press – tertiary)"
+    },
+    {
+      "date": "2026-11-10",
+      "reg": "ghgp",
+      "significance": "medium",
+      "headline": "Scope 2: the current market-based method will stay available during a transition",
+      "detail": "After an October workshop, the Scope 2 working group published interim direction. A new market-based method would use hourly matching and deliverability. The 2015 method stays available during a transition, with the largest users moving first. Thresholds, dates and treatment of existing green-power contracts are still open. All of this goes into the joint GHGP–ISO draft for consultation in Q2 2027.",
+      "so_what": "No change for FY 2026 or FY 2027 reporting. Before signing long-term electricity contracts, check whether they would deliver hourly, local matching.",
+      "source_url": "https://ghgprotocol.org/sites/default/files/2026-11/Scope2-Workshop-Outcomes-Overview-2026.11.10.pdf",
+      "source_title": "GHG Protocol"
+    },
+    {
+      "date": "2026-11-10",
+      "reg": "csrd",
+      "significance": "medium",
+      "headline": "Revised ESRS (2026) enter into force",
+      "detail": "Delegated Regulation (EU) 2026/1563 entered into force on 10 November 2026. It applies to financial years starting on or after 1 January 2027. For FY 2026 companies can still choose the old or new standards.",
+      "so_what": "Lock in your FY 2026 choice with your auditor and start building the FY 2027 datapoint list on the revised standards.",
+      "source_url": "https://eur-lex.europa.eu/eli/reg_del/2026/1563/oj/eng",
+      "source_title": "EUR-Lex"
+    },
+    {
+      "date": "2026-11-05",
+      "reg": "eed",
+      "significance": "low",
+      "headline": "Austrian energy efficiency law still not amended",
+      "detail": "WKO still described the EEffG amendment implementing EED III as upcoming in early November. The EU audit deadline of 11 October 2026 has passed without Austrian implementing law.",
+      "so_what": "If your energy use is above 10 TJ a year, finish the audit anyway – the EU deadline does not wait for the Austrian law.",
+      "source_url": "https://www.wko.at/transport-verkehr/energieeffizienzgesetz-novelle-2026",
+      "source_title": "WKO"
+    },
+    {
+      "date": "2026-11-04",
+      "reg": "gcd",
+      "significance": "medium",
+      "headline": "Commission to withdraw the Green Claims Directive",
+      "detail": "The Commission Work Programme 2027 lists the Green Claims proposal among 18 pending proposals to be withdrawn. The Council never agreed a negotiating position. The formal withdrawal follows within six months, after Parliament and Council have commented.",
+      "so_what": "No pre-approval or third-party verification of green claims is coming. EmpCo still applies: vague claims and offset-based neutrality claims remain banned.",
+      "source_url": "https://commission.europa.eu/publications/2027-commission-work-programme-and-annexes_en",
+      "source_title": "European Commission"
+    },
+    {
+      "date": "2026-10-21",
+      "reg": "ppwr",
+      "significance": "medium",
+      "headline": "Council and Parliament split on relief from the authorised-representative duty",
+      "detail": "The Council wants relief only for EU producers placing less than 1 tonne of packaging a year in another Member State, until 2032. Parliament wants to exempt all EU-based micro and small enterprises until 2035. Trilogue had not started by mid-November. Producers outside the EU stay covered in both versions.",
+      "so_what": "The duty applies today. If you sell packaged goods into other EU countries without a local entity, keep your representative arrangements in place.",
+      "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/21/simplification-council-agrees-negotiating-stance-to-cut-red-tape-for-small-packaging-producers/",
+      "source_title": "Council of the EU"
+    },
+    {
+      "date": "2026-10-20",
+      "reg": "cbam",
+      "significance": "medium",
+      "headline": "No deal yet on extending CBAM to downstream products",
+      "detail": "The first political trilogue on adding steel- and aluminium-heavy downstream goods took place on 20 October. The institutions disagree on how many products to add (about 180 to 450+), on anti-circumvention rules and on scrap. A second trilogue is planned for 30 November, with agreement targeted before the end of 2026. Reported by a law firm.",
+      "so_what": "If you import finished goods made mainly of steel or aluminium (e.g. fasteners, tubes, metal furniture), check whether they are on any of the proposed lists.",
+      "source_url": "https://www.mayerbrown.com/de/insights/publications/2026/10/eus-cbam-downstream-extension-and-anti-circumvention-amendments-the-road-to-trilogue",
+      "source_title": "Mayer Brown (secondary)"
+    },
+    {
+      "date": "2026-10-16",
+      "reg": "ets2",
+      "significance": "medium",
+      "headline": "EU leaders ask for a fresh look at ETS2 impacts",
+      "detail": "The European Council asked the Commission to update its assessment of all ETS2 impacts, focusing on design and safeguards. It did not ask for another delay. The 2028 start remains law.",
+      "so_what": "Keep planning with a carbon price on fuel and heating from 2028, but watch for design changes in 2027.",
+      "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/16/european-council-conclusions-on-competitiveness-the-next-multiannual-financial-framework-and-enlargement-and-reforms/",
+      "source_title": "European Council"
+    },
     {
       "date": "2026-10-11",
       "reg": "eed",
@@ -1971,6 +2323,16 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "so_what": "If you are above 10 TJ and not already covered by the EEffG, keep audit preparation going; the national deadline may be set retroactively or shortly after the amendment.",
       "source_url": "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20008914",
       "source_title": "RIS"
+    },
+    {
+      "date": "2026-10-09",
+      "reg": "ets2",
+      "significance": "low",
+      "headline": "Stronger price brake for ETS2 adopted",
+      "detail": "The Council adopted the amended market stability reserve. If prices exceed €45 per tonne (2020 prices), 40 million allowances are released instead of 20 million. The reserve now runs beyond 2030.",
+      "so_what": "Price spikes in the first years are less likely. Use €45–60 per tonne as a planning range for fleet and heating cost scenarios.",
+      "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/09/ets2-council-signs-off-on-rules-strengthening-the-market-stability-reserve/",
+      "source_title": "Council of the EU"
     },
     {
       "date": "2026-10-06",
@@ -2043,6 +2405,16 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "source_title": "Greenpeace Austria (complainant's own statement)"
     },
     {
+      "date": "2026-09-24",
+      "reg": "vsme",
+      "significance": "medium",
+      "headline": "EU voluntary standard and value-chain cap in force",
+      "detail": "Delegated Regulation (EU) 2026/1560 was published on 21 September and entered into force on 24 September 2026. Companies outside the CSRD can use it to report voluntarily. From FY 2027, CSRD reporters may not ask value-chain companies with up to 1,000 employees for more data than the standard contains.",
+      "so_what": "If you send ESG questionnaires to suppliers, align them with the standard's datapoints before 2027. If you are a smaller supplier, you can point customers to it.",
+      "source_url": "https://eur-lex.europa.eu/eli/reg_del/2026/1560/oj",
+      "source_title": "EUR-Lex"
+    },
+    {
       "date": "2026-09-21",
       "reg": "csrd",
       "significance": "high",
@@ -2051,6 +2423,16 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "so_what": "Decide whether to early-adopt ESRS (2026) for FY 2026 and update your datapoint list accordingly.",
       "source_url": "https://viewpoint.pwc.com/us/en/pwc/in-depth/2026/id_int202603.html",
       "source_title": "PwC Viewpoint"
+    },
+    {
+      "date": "2026-09-17",
+      "reg": "eudr",
+      "significance": "medium",
+      "headline": "EUDR product scope changed – leather out, soluble coffee in (added late)",
+      "detail": "Delegated Regulation (EU) 2026/2102 was published on 17 September 2026. Cattle hides, skins and leather, some rubber articles and soybean seeds for sowing are removed. Soluble coffee, frozen cattle tongues, certain palm-oil derivatives and some soaps are added from 30 December 2027. This was missed in earlier checks.",
+      "so_what": "Re-check your product list against the new Annex I. Leather goods drop out; coffee extracts and oleochemicals need preparation for 2027.",
+      "source_url": "https://eur-lex.europa.eu/eli/reg_del/2026/2102/oj",
+      "source_title": "EUR-Lex"
     },
     {
       "date": "2026-08-31",
@@ -2070,7 +2452,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "detail": "The implementing act on harmonised packaging labels was not adopted by the 12 August 2026 application date. It is now expected in Q4 2026. The label requirements apply 24 months after the act enters into force.",
       "so_what": "Don't redesign labels yet; plan artwork changes once the act is published.",
       "source_url": "https://packagingeurope.com/news/eu-commission-misses-deadline-to-harmonize-ppwrs-labelling-requirements/14631.article",
-      "source_title": "Packaging Europe"
+      "source_title": "Packaging Europe (trade press – tertiary)"
     },
     {
       "date": "2026-08-12",
@@ -2079,8 +2461,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "headline": "PPWR applies – no postponement",
       "detail": "Regulation (EU) 2025/40 has applied since 12 August 2026. No amending act postpones it. Legal challenges at the General Court do not suspend application.",
       "so_what": "Confirm conformity documentation and substances-of-concern evidence for packaging placed on the market since August.",
-      "source_url": "https://ppwr-packaging.com/articles/ppwr-delayed/",
-      "source_title": "PPWR Packaging"
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2025/40/oj/eng",
+      "source_title": "EUR-Lex – Regulation (EU) 2025/40"
     },
     {
       "date": "2026-08-12",
@@ -2089,8 +2471,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "headline": "Battery labelling date depends on a delayed implementing act",
       "detail": "Labelling obligations apply from 18 August 2026 or 18 months after the label-format implementing act, whichever is later. Because that act was still in draft, the effective date is likely to be later.",
       "so_what": "Check the Official Journal for the label implementing act before fixing a labelling deadline internally.",
-      "source_url": "https://www.batteryregulation.eu/",
-      "source_title": "batteryregulation.eu"
+      "source_url": "https://eur-lex.europa.eu/EN/legal-content/summary/sustainability-rules-for-batteries-and-waste-batteries.html",
+      "source_title": "EUR-Lex summary"
     },
     {
       "date": "2026-08-12",
@@ -2129,8 +2511,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "headline": "Ban on destroying unsold apparel and footwear starts",
       "detail": "Large enterprises may no longer destroy unsold apparel, clothing accessories or footwear. Recycling counts as destruction unless a derogation in Delegated Regulation (EU) 2026/296 applies. Medium-sized enterprises follow in July 2030.",
       "so_what": "If you sell apparel or footwear, document the handling route and derogation for every unsold item.",
-      "source_url": "https://trustrace.com/knowledge-hub/what-happens-on-19-july-2026-under-espr",
-      "source_title": "TrusTrace"
+      "source_url": "https://products.cooley.com/2026/05/07/deep-dive-eu-finalises-new-requirements-for-unsold-consumer-products-under-espr/",
+      "source_title": "Cooley (secondary)"
     },
     {
       "date": "2026-07-10",
@@ -2139,8 +2521,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "headline": "Draft update of RoHS lead and cadmium exemptions notified to WTO",
       "detail": "The Commission notified a draft delegated directive that renews, revises or replaces many lead and cadmium exemptions. It adds no new restricted substances. Adoption was expected in Q3 2026; Member States then have six months to transpose.",
       "so_what": "If your electronics rely on a lead or cadmium exemption, check whether its scope or expiry date changes.",
-      "source_url": "https://gpcgateway.com/news/detail/eu-proposes-extensive-revisions-to-rohs-lead-and-cadmium-exemptions/MjYwNQ==",
-      "source_title": "GPC Gateway (secondary source)"
+      "source_url": "https://www.europarl.europa.eu/legislative-train/theme-a-european-green-deal/file-revision-of-eu-rules-restricting-the-use-of-hazardous-substances-in-electronics",
+      "source_title": "EP Legislative Train"
     },
     {
       "date": "2026-07-03",
@@ -2263,8 +2645,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
     },
     {
       "reg": "ppwr",
-      "date": "2026-12-15",
-      "label": "Labelling implementing act expected (Q4 2026)",
+      "date": "2027-05-15",
+      "label": "Labelling implementing act – now expected Q2 2027 (secondary source)",
       "projected": true
     },
     {
@@ -2502,8 +2884,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
     },
     {
       "reg": "weee",
-      "date": "2026-11-11",
-      "label": "Circular Economy Act incl. WEEE revision – planned (missed Q3 target)",
+      "date": "2026-12-02",
+      "label": "Circular Economy Act incl. WEEE revision – now listed (missed Q3, 11 and 18 Nov)",
       "projected": true,
       "big": true
     },
@@ -2514,8 +2896,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
     },
     {
       "reg": "rohs",
-      "date": "2026-10-31",
-      "label": "Further lead/cadmium exemption update – adoption expected (overdue)",
+      "date": "2026-12-31",
+      "label": "Further lead/cadmium exemption update – still not adopted (overdue since Q3 2026)",
       "projected": true
     },
     {
@@ -2602,7 +2984,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
     {
       "reg": "csrd",
       "date": "2026-11-10",
-      "label": "Revised ESRS (2026) enter into force"
+      "label": "Revised ESRS (2026) entered into force",
+      "done": true
     },
     {
       "reg": "rohs",
@@ -2620,6 +3003,94 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "reg": "reach",
       "date": "2026-12-31",
       "label": "ECHA final opinion on universal PFAS restriction",
+      "projected": true
+    },
+    {
+      "reg": "cbam",
+      "date": "2026-11-30",
+      "label": "Second trilogue on downstream extension (planned)",
+      "projected": true
+    },
+    {
+      "reg": "cbam",
+      "date": "2027-01-04",
+      "label": "Q4 2026 CBAM certificate price published"
+    },
+    {
+      "reg": "ets2",
+      "date": "2026-10-09",
+      "label": "Stronger market stability reserve adopted",
+      "done": true
+    },
+    {
+      "reg": "eudr",
+      "date": "2026-09-17",
+      "label": "Product-scope act published (leather out)",
+      "done": true
+    },
+    {
+      "reg": "eudr",
+      "date": "2027-12-30",
+      "label": "Newly added products (e.g. soluble coffee) in scope"
+    },
+    {
+      "reg": "ghgp",
+      "date": "2027-01-01",
+      "label": "Land Sector and Removals Standard effective"
+    },
+    {
+      "reg": "espr",
+      "date": "2026-12-15",
+      "label": "Iron & steel delegated act expected (Q4 2026)",
+      "projected": true
+    },
+    {
+      "reg": "tax",
+      "date": "2027-01-01",
+      "label": "Revised screening criteria planned to apply (adoption pending)",
+      "projected": true
+    },
+    {
+      "reg": "vsme",
+      "date": "2025-07-30",
+      "label": "Commission Recommendation on VSME",
+      "done": true
+    },
+    {
+      "reg": "vsme",
+      "date": "2026-09-24",
+      "label": "Voluntary standard (2026/1560) in force",
+      "done": true,
+      "big": true
+    },
+    {
+      "reg": "vsme",
+      "date": "2027-01-01",
+      "label": "Value-chain cap applies (FY 2027)",
+      "big": true
+    },
+    {
+      "reg": "gcd",
+      "date": "2026-11-04",
+      "label": "Withdrawal announced (Work Programme 2027)",
+      "done": true,
+      "big": true
+    },
+    {
+      "reg": "gcd",
+      "date": "2027-05-04",
+      "label": "Formal withdrawal expected (within six months)",
+      "projected": true
+    },
+    {
+      "reg": "iso14001",
+      "date": "2027-10-31",
+      "label": "No new certifications to ISO 14001:2015 after this date"
+    },
+    {
+      "reg": "batt",
+      "date": "2026-12-15",
+      "label": "Passport access-rights act expected (Q4 2026)",
       "projected": true
     }
   ],
@@ -2645,9 +3116,19 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "what": "Map suppliers of covered commodities and set up due diligence statements or reference-number handling."
     },
     {
+      "reg": "eudr",
+      "title": "Re-check EUDR product list",
+      "what": "Leather is out of scope, soluble coffee and some palm-oil derivatives come in from Dec 2027. Update the product list behind your due diligence."
+    },
+    {
       "reg": "csrd",
       "title": "Decide on early use of ESRS (2026)",
       "what": "Revised standards may be used for FY 2026. Align your datapoints and brief your auditor."
+    },
+    {
+      "reg": "cbam",
+      "title": "Plan CBAM certificate purchases (Feb 2027)",
+      "what": "Certificate sales start 1 Feb 2027 and at least 50% of embedded emissions must be covered at each quarter-end. Agree budget and supplier emissions data now."
     },
     {
       "reg": "ppwr",
@@ -2668,6 +3149,11 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "reg": "textepr",
       "title": "Prepare for textile EPR (2028)",
       "what": "If you sell clothing, footwear or home textiles, start collecting quantity data per country for future EPR registration and fees."
+    },
+    {
+      "reg": "vsme",
+      "title": "Align supplier ESG questionnaires with the value-chain cap",
+      "what": "From FY 2027 you may only ask suppliers with up to 1,000 employees for the datapoints in the voluntary standard (for CSRD purposes). Review questionnaires now."
     }
   ],
   "groups": [
@@ -2728,7 +3214,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
     {
       "code": "ISO 45001",
       "topic": "Occupational health & safety",
-      "relevance": "Reduces accidents and helps manage health and safety risks systematically. Supports ESRS S1 health & safety disclosures. The revision is still a draft – don't plan on draft content yet.",
+      "relevance": "Reduces accidents and helps manage health and safety risks systematically. Supports ESRS S1 health & safety disclosures. A revision is under way; no new edition published yet (not yet checked against ISO's own page).",
       "edition": "2018 + climate amendment 2024 (revision expected 2027)"
     },
     {
@@ -2788,14 +3274,6 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
     {
       "title": "NSF – ISO 9001:2026 published",
       "url": "https://www.nsf.org/knowledge-library/iso-90012026-published-on-september-16-2026-what-quality-leaders-need-to-know"
-    },
-    {
-      "title": "Konfirmity – ISO 27001 in 2026",
-      "url": "https://www.konfirmity.com/blog/iso-27001-what-changed-in-2026"
-    },
-    {
-      "title": "Punyam – ISO 45001 revision status",
-      "url": "https://www.punyam.com/blog/iso-45001-revision-update/"
     }
   ]
 }
@@ -2894,38 +3372,58 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         <p>An independent reference for tracking EU sustainability rules that are new, being phased in or being changed. It is modelled on the independent GHG Standards Tracker but covers EU product, packaging, green-claims, supply-chain and reporting law instead of US rules. It is not legal advice – always check the linked primary source before acting on a date.</p>
 
         <h2>How the data is maintained</h2>
-        <p>Each week the sources below are checked for new developments. New items go into the Updates feed, and a regulation's status, milestones and confidence are adjusted if something changed. Once a month every entry is re-checked against the primary legal text. Entries marked <span class="tag unver">Not yet verified</span> were added from general knowledge and still need that check.</p>
+        <p>The dashboard is updated with Claude (Anthropic's AI assistant) and reviewed by the maintainer before it is published. Each update follows the same steps:</p>
+        <ol>
+          <li><b>Search</b> for developments since the last check for every rule and standard in scope.</li>
+          <li><b>Verify</b> every date, status and legal requirement against a primary source (list below). Where only a secondary source exists, the item is labelled as such.</li>
+          <li><b>Record</b> new developments in the Updates feed, newest first, each with a source link and what it means for companies.</li>
+          <li><b>Adjust</b> status, milestones, key points and confidence. Past milestones are marked done; things that were expected but did not happen (missed deadlines, delays) are recorded too.</li>
+          <li><b>Check Austria</b>: for every directive, the Austrian transposition is checked in RIS and the Parliament's database.</li>
+          <li><b>Refresh</b> the priority actions and remove items that are no longer current.</li>
+        </ol>
+        <p>Every entry is checked one by one at each update – including those where nothing changed. Each entry on the Regulations tab shows the date of its last check and what was checked.</p>
+        <p>Entries marked <span class="tag unver">Not yet verified</span> have not yet been checked against a primary source.</p>
 
-        <h2>Sources to check each week</h2>
-        <div class="tscroll">
-        <table class="src">
-          <thead><tr><th>Source</th><th>What it tells you</th></tr></thead>
-          <tbody>
-            <tr><td><a href="https://eur-lex.europa.eu/oj/direct-access.html" target="_blank" rel="noopener">EUR-Lex / Official Journal</a></td><td>Final adopted texts, delegated and implementing acts, corrigenda. The only source for binding dates.</td></tr>
-            <tr><td><a href="https://www.europarl.europa.eu/legislative-train/" target="_blank" rel="noopener">EP Legislative Train</a></td><td>Where a proposal sits in the legislative process.</td></tr>
-            <tr><td><a href="https://www.consilium.europa.eu/en/press/press-releases/" target="_blank" rel="noopener">Council press releases</a></td><td>Council positions and final adoptions.</td></tr>
-            <tr><td><a href="https://ec.europa.eu/info/law/better-regulation/have-your-say" target="_blank" rel="noopener">Commission – Have your say</a></td><td>Draft delegated and implementing acts open for feedback.</td></tr>
-            <tr><td><a href="https://www.efrag.org/en/news-and-calendar/news" target="_blank" rel="noopener">EFRAG news</a></td><td>ESRS changes and guidance.</td></tr>
-            <tr><td><a href="https://www.ris.bka.gv.at/" target="_blank" rel="noopener">RIS (Austrian legal information system)</a></td><td>Austrian transposition of directives, e.g. UWG, AWG, FAGG.</td></tr>
-            <tr><td><a href="https://ghgprotocol.org/blog" target="_blank" rel="noopener">GHG Protocol news</a></td><td>Standard revisions, consultations and the joint GHGP–ISO standard.</td></tr>
-            <tr><td><a href="https://www.iso.org/news" target="_blank" rel="noopener">ISO news</a> / certification body updates</td><td>New editions of ISO standards and transition deadlines.</td></tr>
-            <tr><td>Law-firm alerts</td><td>Interpretation only – never the source for a date.</td></tr>
-          </tbody>
-        </table>
-        </div>
+        <h2>Source rules</h2>
+        <p>Only public information is used – nothing about any individual company. Every source link carries a label showing which of three tiers it belongs to. The source is always named, so readers can judge it themselves.</p>
+        <p><span class="stag off">Primary</span> <b>The official source itself.</b> EU legal texts and institutions (EUR-Lex / Official Journal, European Commission, Council, European Parliament), EU bodies and agencies (EFRAG, ECHA, EEA), Austrian authorities and legal databases (RIS, Parliament, ministries, oesterreich.gv.at, WKO), and the standard setters (GHG Protocol, ISO). <b>Required</b> for any date, status or legal requirement wherever one exists.</p>
+        <p><span class="stag sec">Secondary</span> <b>Professional analysis of the primary source.</b> Law firms, Big Four and other audit firms, established consultancies, accredited certification bodies (e.g. DNV, SGS, TÜV) and recognised industry associations. Used for interpretation, context and early signals – e.g. what happened in a closed trilogue.</p>
+        <p><span class="stag ter">Tertiary</span> <b>Reporting or summaries by others.</b> Specialised trade press (e.g. EUWID, Packaging Europe, packaging journal), compliance-software and consultancy blogs (e.g. Coolset, Certivo, Terrascope, CDX, GPC Gateway) and other aggregators. Used only where nothing better exists yet, for example a leaked Commission agenda date. Items resting only on a tertiary source are treated as unconfirmed and get at most "Medium" confidence.</p>
+        <p>Not used at all: forums, social media, AI-generated sites and sources that don't name where their information comes from.</p>
+        <h3>When sources disagree</h3>
+        <p>Both sources are named, the primary source is followed, and the more conservative reading is shown. The conflict is noted in the entry.</p>
+        <h3>Upgrading a source</h3>
+        <p>When a primary source becomes available for something first reported by a secondary or tertiary source (e.g. publication in the Official Journal), the primary link is added and the entry is re-rated.</p>
+        <h3>Austrian transposition</h3>
+        <p>EU regulations apply directly. EU directives only bind companies once Austria has transposed them – unless a deadline passes, in which case the EU text still shows what is coming. Austrian laws are checked in RIS (in force) and on the Parliament's website (drafts and bills).</p>
+
+        <h2>Primary sources checked</h2>
+        <div class="tscroll"><table class="src"><thead><tr><th>Source</th><th>What it is used for</th></tr></thead><tbody>
+            <tr><td><a href="https://eur-lex.europa.eu/oj/direct-access.html" target="_blank" rel="noopener">EUR-Lex / Official Journal of the EU</a></td><td>Final adopted texts, consolidated versions, delegated and implementing acts, corrigenda. The only source for binding dates.</td></tr><tr><td><a href="https://oeil.europarl.europa.eu/" target="_blank" rel="noopener">Legislative Observatory (OEIL)</a></td><td>Every step of a legislative file: proposal, committee vote, plenary, Council adoption.</td></tr><tr><td><a href="https://www.europarl.europa.eu/legislative-train/" target="_blank" rel="noopener">European Parliament – Legislative Train</a></td><td>Plain-language status of proposals and planned Commission initiatives.</td></tr><tr><td><a href="https://www.consilium.europa.eu/en/press/press-releases/" target="_blank" rel="noopener">Council of the EU – press releases</a></td><td>Council negotiating positions, provisional agreements and final adoptions.</td></tr><tr><td><a href="https://www.consilium.europa.eu/en/european-council/conclusions/" target="_blank" rel="noopener">European Council conclusions</a></td><td>Political direction from EU leaders, e.g. requests to review ETS2.</td></tr><tr><td><a href="https://ec.europa.eu/info/law/better-regulation/have-your-say" target="_blank" rel="noopener">European Commission – Have your say</a></td><td>Calls for evidence, consultations and draft delegated or implementing acts.</td></tr><tr><td><a href="https://commission.europa.eu/" target="_blank" rel="noopener">European Commission – policy pages (DG CLIMA, ENV, FISMA, GROW, TAXUD)</a></td><td>Official guidance, FAQs, CBAM certificate prices, ETS2 auction calendars, ESPR and product passport pages.</td></tr><tr><td><a href="https://www.efrag.org/en/news-and-calendar/news" target="_blank" rel="noopener">EFRAG</a></td><td>ESRS, VSME and implementation guidance.</td></tr><tr><td><a href="https://echa.europa.eu/" target="_blank" rel="noopener">ECHA</a></td><td>REACH restrictions, PFAS process, RoHS exemption assessments.</td></tr><tr><td><a href="https://www.eea.europa.eu/" target="_blank" rel="noopener">European Environment Agency</a></td><td>Background data and evaluations; not used for legal dates.</td></tr><tr><td><a href="https://www.ris.bka.gv.at/" target="_blank" rel="noopener">RIS – Rechtsinformationssystem des Bundes</a></td><td>Austrian laws in force (UWG, AWG, KSchG, EEffG, UGB) and Federal Law Gazette (BGBl).</td></tr><tr><td><a href="https://www.parlament.gv.at/" target="_blank" rel="noopener">Austrian Parliament</a></td><td>Austrian draft bills (Ministerialentwürfe), government bills and adoption dates.</td></tr><tr><td><a href="https://www.oesterreich.gv.at/" target="_blank" rel="noopener">oesterreich.gv.at and federal ministries</a></td><td>Official explanations of new Austrian rules.</td></tr><tr><td><a href="https://www.wko.at/" target="_blank" rel="noopener">WKO (Austrian Economic Chamber)</a></td><td>Practical guidance on Austrian implementation for companies.</td></tr><tr><td><a href="https://ghgprotocol.org/blog" target="_blank" rel="noopener">GHG Protocol</a></td><td>Standards, consultations, board decisions and the joint GHGP–ISO standard.</td></tr><tr><td><a href="https://www.iso.org/news" target="_blank" rel="noopener">ISO</a></td><td>New editions and revision status of ISO standards.</td></tr>
+        </tbody></table></div>
+
+        <h2>Secondary and tertiary sources</h2>
+        <div class="tscroll"><table class="src"><thead><tr><th>Tier</th><th>Type</th><th>Examples</th><th>Used for</th></tr></thead><tbody>
+            <tr><td><span class="stag sec">Secondary</span></td><td>Law firms, Big Four, consultancies</td><td>Linklaters, Clifford Chance, Mayer Brown, CMS, Schoenherr, PwC, KPMG, EY, BDO</td><td>Interpretation, negotiation status, summaries of new acts.</td></tr>
+            <tr><td><span class="stag sec">Secondary</span></td><td>Accredited certification bodies</td><td>DNV, SGS, TÜV, NSF</td><td>ISO transition deadlines and audit practice.</td></tr>
+            <tr><td><span class="stag sec">Secondary</span></td><td>Recognised industry associations</td><td>EUROPEN, ICAP</td><td>Sector view and early signals.</td></tr>
+            <tr><td><span class="stag ter">Tertiary</span></td><td>Specialised trade press</td><td>EUWID, Packaging Europe, packaging journal</td><td>Early signals such as planned Commission dates – unconfirmed until a primary source follows.</td></tr>
+            <tr><td><span class="stag ter">Tertiary</span></td><td>Compliance-software and consultancy blogs</td><td>Coolset, Certivo, Terrascope, CDX, GPC Gateway</td><td>Background and overviews only; never the sole basis for a date.</td></tr>
+        </tbody></table></div>
 
         <h2>How to read the confidence ratings</h2>
         <p>Each regulation's rating answers one question: how likely is it that what is described here is what companies will have to comply with?</p>
-        <p><span class="tag c-confirmed">Confirmed</span> Final published text or formally adopted decision.</p>
+        <p><span class="tag c-confirmed">Confirmed</span> Final published text or formally adopted decision, checked against the primary source.</p>
         <p><span class="tag c-high">High</span> Adopted or officially planned, but a date is conditional or a procedural step remains.</p>
-        <p><span class="tag c-medium">Medium</span> Outcome genuinely open – negotiations, consultations or court cases could change it.</p>
+        <p><span class="tag c-medium">Medium</span> Outcome genuinely open – negotiations, consultations or court cases could change it – or so far only reported by secondary or tertiary sources.</p>
         <p><span class="tag c-low">Low</span> Early signal only, or the file is dormant.</p>
+        <p>Dates shown as hollow diamonds on the timeline, or as "around" in the countdown, are plans or expectations and can still move.</p>
 
-        <h2>How to update the dashboard</h2>
-        <p>All content sits in one data block at the top of this page's file (<code>id="data"</code>). To add a development, copy an existing item in <code>updates</code>, paste it at the top, change the text and date, and set <code>meta.last_updated</code>. The recency groups, countdowns and timeline recalculate automatically.</p>
+        <h2>Limits</h2>
+        <p>This is an independent overview, not legal advice. It summarises; it does not replace the legal text. Before acting on a date or requirement, open the linked law text ("Read the law text" on each card) and check the current consolidated version.</p>
 
         <h2>Scope</h2>
-        <p>In scope: EU regulations and directives on reporting, carbon pricing, energy efficiency, products, packaging, batteries, repair, waste and producer responsibility, chemicals, deforestation, forced labour, supply-chain due diligence and green claims that are new or changing, plus Austrian transposition where relevant and the Austrian Waste Management Act (AWG 2002). Also tracked: the voluntary standards that sustainability reporting depends on – the GHG Protocol and ISO 14001 – with other ISO standards listed for reference in the Regulation guide. Out of scope: non-EU rules.</p>
+        <p>In scope: EU regulations and directives on reporting, carbon pricing, energy efficiency, products, packaging, batteries, repair, waste and producer responsibility, chemicals, deforestation, forced labour, supply-chain due diligence and green claims that are new or changing, plus Austrian transposition where relevant and the Austrian Waste Management Act (AWG 2002). Also tracked: the EU voluntary reporting standard for smaller companies (VSME) and the voluntary standards that sustainability reporting depends on – the GHG Protocol and ISO 14001 – with other ISO standards listed for reference in the Regulation guide. Out of scope: non-EU rules.</p>
         <p>For voluntary standards the stages read differently: drafting, public consultation, final draft, published, transition period and required use.</p>
       </div>
     </section>
@@ -2942,6 +3440,13 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
   const parse = s => { const [y,m,d]=s.split('-').map(Number); return new Date(y,m-1,d); };
   const fmt = s => parse(s).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
   const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const OFFICIAL=['europa.eu','gv.at','wko.at','efrag.org','ghgprotocol.org','iso.org','gov.mt'];
+  const TERTIARY=['packaging-journal.de','euwid-recycling.com','packagingeurope.com','packaging-gateway.com','ajot.com','carbon-pulse.com','esgtoday.com','coolset.com','certivo.com','terrascope.com','cdxsystem.com','gpcgateway.com','carbonfact.com','cbamjournal.com','compliance-atlas.com','complianceandrisks.com','konfirmity.com','lappa.org','ppwr-packaging.com','punyam.com','trustrace.com','generalgas.eu','batteryregulation.eu','compliancegate.com','ppwrconnect.com','cbamguide.com'];
+  const hit = (hst,list) => list.some(dm=>hst===dm||hst.endsWith('.'+dm));
+  const stype = u => { let hst=''; try{hst=new URL(u).hostname.replace(/^www\./,'');}catch(e){}
+    if(hit(hst,OFFICIAL)) return '<span class="stag off">Primary</span>';
+    if(hit(hst,TERTIARY)) return '<span class="stag ter">Tertiary</span>';
+    return '<span class="stag sec">Secondary</span>'; };
   const confName = {confirmed:'Confirmed',high:'High',medium:'Medium',low:'Low'};
   let active = new Set(D.regulations.map(r=>r.id));
 
@@ -3014,7 +3519,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         const sents = u.detail.match(/[^.!?]+[.!?]+/g)||[u.detail];
         return `<div class="upd"><div class="date">${fmt(u.date)}<span class="sig sig-${u.significance}">${u.significance[0].toUpperCase()+u.significance.slice(1)} impact</span></div>
           <div>${regTag(u.reg)}<h4>${esc(u.headline)}</h4><ul>${sents.map(s=>`<li>${esc(s.trim())}</li>`).join('')}</ul>
-          <a class="src" href="${esc(u.source_url)}" target="_blank" rel="noopener">Source: ${esc(u.source_title)}</a></div>
+          <a class="src" href="${esc(u.source_url)}" target="_blank" rel="noopener">Source: ${esc(u.source_title)}</a> ${stype(u.source_url)}</div>
           <div class="so"><b>What it means for companies</b>${esc(u.so_what)}</div></div>`;}).join('') : '<p class="empty">Nothing new in this period.</p>'}</div>`;
     }).join('');
 
@@ -3036,13 +3541,14 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
             <div>
               <div class="conf"><h5>Why this confidence rating</h5><p>${esc(r.confidence.reasoning)}</p></div>
               <h5>Next milestone</h5><p style="margin:0 0 14px;font-size:14px">${esc(r.next_milestone)}</p>
-              <h5>Sources</h5><ul>${r.sources.map(s=>`<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a></li>`).join('')}</ul>
+              ${r.check?`<h5>Last checked</h5><p style="margin:0 0 14px;font-size:13.5px;color:var(--ink-2)">${fmt(r.check.date)} – ${esc(r.check.note)}</p>`:''}
+              <h5>Sources</h5><ul>${r.sources.map(s=>`<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a> ${stype(s.url)}</li>`).join('')}</ul>
               ${lawBlock(r)}
             </div>
           </div>
           ${r.compliance?`<div class="comp"><div><h5>Who it applies to</h5><p>${esc(r.compliance.applies_to)}</p></div>
             <div><h5>If you don't comply</h5><p class="max">${esc(r.compliance.max_penalty)}</p><ul>${r.compliance.consequences.map(c=>`<li>${esc(c)}</li>`).join('')}</ul>
-            <div class="csrc">Sources: ${r.compliance.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join(' · ')}</div></div></div>`:''}
+            <div class="csrc">Sources: ${r.compliance.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a> ${stype(s.url)}`).join(' · ')}</div></div></div>`:''}
         </div>
       </details>`).join('')).join('') || '<p class="empty">Select at least one regulation in the filter.</p>';
 
