@@ -169,6 +169,15 @@ footer{margin-top:40px;font-size:12.5px;color:var(--ink-3);max-width:80ch}
 .pdfbox button:hover{filter:brightness(.95)}
 #pdfstatus{font-size:12px;color:var(--ink-3);max-width:34ch;text-align:right;min-height:1em}
 @media (max-width:900px){.headright{align-items:flex-start}.pdfbox{justify-content:flex-start}#pdfstatus{text-align:left}}
+.acts td,.acts th{font-size:13px}
+.atbox{margin-top:16px;border:1px solid var(--rule);border-radius:8px;padding:14px 16px}
+.athead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.athead h5{font-size:13px;margin:0;color:var(--ink-3);font-weight:600}
+.atdl{font-size:12.5px;color:var(--ink-3)}
+.atshort{margin:0 0 6px;font-size:14px;color:var(--ink);font-weight:600}
+.atbox ul{margin:0 0 6px;padding-left:18px;font-size:14px;color:var(--ink-2)}
+.atpill{display:inline-block;font-size:11.5px;font-weight:700;padding:1px 8px;border-radius:999px;white-space:nowrap}
+.at-ok{background:var(--ok-soft);color:var(--ok)} .at-part{background:var(--info-soft);color:var(--info)} .at-open{background:var(--mute-soft);color:var(--mute)} .at-late{background:var(--warn-soft);color:var(--today)}
 .chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
 /* guide */
 .gintro{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:6px}
@@ -355,8 +364,98 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       ],
       "check": {
         "date": "2026-11-18",
-        "note": "Checked EUR-Lex, EFRAG, Austrian Parliament. ESRS in force 10 Nov; no Austrian draft bill found."
-      }
+        "note": "Checked EUR-Lex, EFRAG, Austrian Parliament. ESRS in force 10 Nov; no Austrian draft bill found. Legal acts list checked."
+      },
+      "at": {
+        "status": "Partly transposed",
+        "short": "NaBeG (BGBl. I Nr. 6/2026) – Omnibus I changes still to come",
+        "laws": [
+          {
+            "title": "Nachhaltigkeitsberichtsgesetz (NaBeG) – BGBl. I Nr. 6/2026, mainly amending the UGB",
+            "url": "https://www.ris.bka.gv.at/eli/bgbl/I/2026/6"
+          }
+        ],
+        "points": [
+          "Published 18 Feb 2026, in force since 19 Feb 2026.",
+          "FY 2026: only former NaDiVeG/NFRD reporters (public-interest entities) above both thresholds – more than 1,000 employees and more than €450m turnover – report under CSRD/ESRS. Former NFRD reporters below the thresholds may choose; other large companies have no duty yet.",
+          "Still missing: the rest of Omnibus I. A further UGB amendment is planned so that from FY 2027 every company above both thresholds reports, public-interest entity or not; companies with 500–1,000 employees then drop out. EU deadline 19 Mar 2027 – no draft bill found as of 18 Nov 2026.",
+          "The ESRS themselves (Delegated Regulation 2026/1563) apply directly and need no Austrian law."
+        ],
+        "deadline": "19 Mar 2027 (Omnibus I changes)",
+        "sources": [
+          {
+            "title": "RIS – BGBl. I Nr. 6/2026",
+            "url": "https://www.ris.bka.gv.at/eli/bgbl/I/2026/6"
+          },
+          {
+            "title": "WKO – Nachhaltigkeitsberichte",
+            "url": "https://www.wko.at/ooe/umwelt-energie/nachhaltigkeitsberichte"
+          },
+          {
+            "title": "KPMG Austria – NaBeG in force (secondary)",
+            "url": "https://kpmg.com/at/de/media/newsletter/insurance-news/2026/03/in-nabeg-in-kraft-getreten.html"
+          }
+        ]
+      },
+      "acts_title": "Legal acts under the CSRD (Rechtsakte zur CSRD-Richtlinie)",
+      "acts": [
+        {
+          "type": "Delegated Regulation",
+          "ref": "(EU) 2023/2772",
+          "topic": "ESRS – first set of European Sustainability Reporting Standards",
+          "status": "In force; Annexes replaced by 2026/1563",
+          "applies": "FY 2024–2026",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2023/2772/oj/eng"
+        },
+        {
+          "type": "Delegated Directive",
+          "ref": "(EU) 2023/2775",
+          "topic": "Inflation adjustment of the company size criteria (micro, small, medium, large)",
+          "status": "In force; transposed in the UGB",
+          "applies": "FY 2024 onwards",
+          "url": "https://eur-lex.europa.eu/eli/dir_del/2023/2775/oj/eng"
+        },
+        {
+          "type": "Delegated Regulation",
+          "ref": "(EU) 2025/1416",
+          "topic": "'Quick fix' – phase-in reliefs for Wave 1 companies",
+          "status": "In force",
+          "applies": "FY 2025–2026",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2025/1416/oj/eng"
+        },
+        {
+          "type": "Delegated Regulation",
+          "ref": "(EU) 2026/1563",
+          "topic": "Revised, simplified ESRS (2026)",
+          "status": "In force since 10 Nov 2026",
+          "applies": "FY 2027 (optional FY 2026)",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2026/1563/oj/eng"
+        },
+        {
+          "type": "Delegated Regulation",
+          "ref": "(EU) 2026/1560",
+          "topic": "Voluntary standard (VSME) and value-chain cap",
+          "status": "In force since 24 Sep 2026",
+          "applies": "Cap from FY 2027",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2026/1560/oj/eng"
+        },
+        {
+          "type": "Delegated Regulation (planned)",
+          "ref": "–",
+          "topic": "Limited-assurance standard for sustainability statements",
+          "status": "Due by 1 Jul 2027",
+          "applies": "Not yet known",
+          "url": ""
+        },
+        {
+          "type": "Delegated Regulation (planned)",
+          "ref": "–",
+          "topic": "ESRS XBRL digital taxonomy",
+          "status": "EFRAG draft consulted until 11 Nov 2026",
+          "applies": "Not yet known",
+          "url": ""
+        }
+      ]
     },
     {
       "id": "tax",
@@ -434,8 +533,67 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       ],
       "check": {
         "date": "2026-11-18",
-        "note": "Checked EUR-Lex and Commission. Screening-criteria revision still not found in the Official Journal."
-      }
+        "note": "Checked EUR-Lex and Commission. Screening-criteria revision still not found in the Official Journal. Legal acts list checked."
+      },
+      "acts_title": "Legal acts under the Taxonomy Regulation (Rechtsakte zur Taxonomie-Verordnung)",
+      "acts": [
+        {
+          "type": "Delegated Regulation",
+          "ref": "(EU) 2021/2139",
+          "topic": "Climate Delegated Act – screening criteria for climate mitigation and adaptation",
+          "status": "In force (amended)",
+          "applies": "Since FY 2022",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2021/2139/oj/eng"
+        },
+        {
+          "type": "Delegated Regulation",
+          "ref": "(EU) 2021/2178",
+          "topic": "Disclosures Delegated Act – how to report turnover, CapEx and OpEx KPIs",
+          "status": "In force; amended by 2026/73",
+          "applies": "Since FY 2022",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2021/2178/oj/eng"
+        },
+        {
+          "type": "Delegated Regulation",
+          "ref": "(EU) 2022/1214",
+          "topic": "Complementary Climate Delegated Act – nuclear and gas activities",
+          "status": "In force",
+          "applies": "Since FY 2023",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2022/1214/oj/eng"
+        },
+        {
+          "type": "Delegated Regulation",
+          "ref": "(EU) 2023/2486",
+          "topic": "Environmental Delegated Act – water, circular economy, pollution, biodiversity",
+          "status": "In force",
+          "applies": "Since FY 2024",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2023/2486/oj/eng"
+        },
+        {
+          "type": "Delegated Regulation",
+          "ref": "(EU) 2023/2485",
+          "topic": "Amendment of the Climate Delegated Act – new activities",
+          "status": "In force",
+          "applies": "Since FY 2024",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2023/2485/oj/eng"
+        },
+        {
+          "type": "Delegated Regulation",
+          "ref": "(EU) 2026/73",
+          "topic": "Simplification – 10% materiality threshold, shorter templates",
+          "status": "In force",
+          "applies": "From FY 2026 (optional FY 2025)",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2026/73/oj/eng"
+        },
+        {
+          "type": "Delegated Regulations (planned)",
+          "ref": "–",
+          "topic": "Revised technical screening criteria (Climate and Environmental Delegated Acts)",
+          "status": "Drafts Mar 2026; adoption planned Jun 2026 – not found in the OJ as of 18 Nov 2026",
+          "applies": "Planned 1 Jan 2027",
+          "url": ""
+        }
+      ]
     },
     {
       "id": "vsme",
@@ -568,6 +726,10 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "Mayer Brown – CBAM downstream extension: road to trilogue",
           "url": "https://www.mayerbrown.com/de/insights/publications/2026/10/eus-cbam-downstream-extension-and-anti-circumvention-amendments-the-road-to-trilogue"
+        },
+        {
+          "title": "European Commission – CBAM legislation and guidance (list of acts)",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en?prefLang=et"
         }
       ],
       "explainer": {
@@ -605,8 +767,99 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       ],
       "check": {
         "date": "2026-11-18",
-        "note": "Checked Commission, Council, law-firm reports. Downstream trilogue ongoing; certificate sales rules still draft."
-      }
+        "note": "Checked Commission, Council, law-firm reports. Downstream trilogue ongoing; certificate sales rules still draft. Legal acts list checked."
+      },
+      "acts_title": "Legal acts under the CBAM Regulation (Rechtsakte zur CBAM-Verordnung)",
+      "acts": [
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2023/1773",
+          "topic": "Reporting rules for the transitional period (2023–2025)",
+          "status": "Applied until end 2025",
+          "applies": "2023–2025",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2023/1773/oj/eng"
+        },
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2024/3210",
+          "topic": "CBAM Registry (amended by 2025/2550)",
+          "status": "In force",
+          "applies": "Definitive period",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2024/3210/oj/eng"
+        },
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2025/486",
+          "topic": "Authorised CBAM declarant status (amended by 2025/2549)",
+          "status": "In force",
+          "applies": "Definitive period",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/486/oj/eng"
+        },
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2025/2546",
+          "topic": "Verification of embedded emissions",
+          "status": "In force",
+          "applies": "From 2026",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2546/oj/eng"
+        },
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2025/2547",
+          "topic": "Methods for calculating embedded emissions",
+          "status": "In force",
+          "applies": "From 2026",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2547/oj/eng"
+        },
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2025/2548",
+          "topic": "Calculation and publication of the CBAM certificate price",
+          "status": "In force",
+          "applies": "From 2026",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2548/oj/eng"
+        },
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2025/2619",
+          "topic": "Information exchange with customs authorities",
+          "status": "In force",
+          "applies": "From 2026",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2619/oj/eng"
+        },
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2025/2620",
+          "topic": "Free allocation adjustment and benchmarks",
+          "status": "In force",
+          "applies": "From 2026",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2620/oj/eng"
+        },
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2025/2621",
+          "topic": "Default values per product and country (corrected by 2026/1740, retroactive to 1 Jan 2026)",
+          "status": "In force",
+          "applies": "From 2026",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+        },
+        {
+          "type": "Delegated Regulation",
+          "ref": "(EU) 2025/2551",
+          "topic": "Accreditation of verifiers",
+          "status": "In force",
+          "applies": "From 2026",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2025/2551/oj/eng"
+        },
+        {
+          "type": "Delegated Regulation (planned)",
+          "ref": "–",
+          "topic": "Sale and repurchase of CBAM certificates on the common central platform",
+          "status": "Draft (Jul 2026), not yet adopted",
+          "applies": "Sales from 1 Feb 2027",
+          "url": ""
+        }
+      ]
     },
     {
       "id": "ets2",
@@ -695,6 +948,37 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "check": {
         "date": "2026-11-18",
         "note": "Checked Council and European Council. MSR adopted; leaders asked for a new impact assessment."
+      },
+      "at": {
+        "status": "Transposed",
+        "short": "Emissionszertifikategesetz 2011 (EZG 2011); national CO₂ price under NEHG 2022 continues until ETS2 starts",
+        "laws": [
+          {
+            "title": "Emissionszertifikategesetz 2011 (EZG 2011) – ETS2 rules added in 2023",
+            "url": "https://www.bmf.gv.at/themen/klimapolitik/carbon-markets/EU-ETS-2/frequently-asked-questions-FAQ.html"
+          },
+          {
+            "title": "Nationales Emissionszertifikatehandelsgesetz 2022 (NEHG 2022)",
+            "url": "https://www.bmf.gv.at/themen/klimapolitik/carbon-markets/nationales-emissionszertifikatehandelsgesetz-2022-(NEHG-2022)/gegenstand-und-geltungsbereich.html"
+          }
+        ],
+        "points": [
+          "Austria implements ETS2 in the EZG 2011 (amended end of 2023). Regulated entities are the companies that release fuels for consumption – mainly fuel and gas suppliers.",
+          "Austria has opted in additional sectors (e.g. agriculture and forestry, rail), approved by Delegated Decision (EU) 2024/2986.",
+          "Until ETS2 pricing starts in 2028, the national CO₂ price under the NEHG 2022 continues (€55/t in 2025 and 2026).",
+          "Exact BGBl reference of the 2023 amendment not yet checked in RIS."
+        ],
+        "deadline": "Done (ETS2 pricing from 2028)",
+        "sources": [
+          {
+            "title": "BMF – EU-ETS 2 FAQ",
+            "url": "https://www.bmf.gv.at/themen/klimapolitik/carbon-markets/EU-ETS-2/frequently-asked-questions-FAQ.html"
+          },
+          {
+            "title": "ICAP – Austria prepares end of national ETS (secondary)",
+            "url": "https://icapcarbonaction.com/en/news/austria-prepares-end-national-ets-and-launch-eu-ets-2"
+          }
+        ]
       }
     },
     {
@@ -717,7 +1001,9 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         "Medium-sized enterprises are covered from 19 July 2030; micro and small enterprises are exempt.",
         "Large companies already have to disclose unsold products discarded; a standardised disclosure format (Implementing Regulation (EU) 2026/2) applies from February 2027.",
         "The working plan prioritises textiles, furniture, tyres, mattresses, iron, steel and aluminium; the textiles act is expected in 2027.",
-        "Iron and steel: the Commission's call for evidence (May 2026) announced a delegated act on carbon footprint, recycled content and product passports for Q4 2026. Not adopted as of 18 Nov 2026."
+        "Iron and steel: the Commission's call for evidence (May 2026) announced a delegated act on carbon footprint, recycled content and product passports for Q4 2026. Not adopted as of 18 Nov 2026.",
+        "Every act adopted under the ESPR (delegated and implementing regulations) is listed in the 'Legal acts under the ESPR' table below and checked at each update. They apply directly – no Austrian transposition needed.",
+        "Not the same as textile EPR: the ESPR sets design and information rules for textiles. Who pays for collection and recycling of textile waste (EPR) comes from the Waste Framework Directive – see the Textile EPR entry."
       ],
       "confidence": {
         "level": "confirmed",
@@ -777,8 +1063,51 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       ],
       "check": {
         "date": "2026-11-18",
-        "note": "Checked Commission. Iron & steel act not yet adopted."
-      }
+        "note": "Checked Commission and EUR-Lex for new acts under the ESPR. No new act adopted; iron & steel act still pending."
+      },
+      "acts_title": "Legal acts under the ESPR (Rechtsakte zur ESPR-Verordnung)",
+      "acts": [
+        {
+          "type": "Delegated Regulation",
+          "ref": "(EU) 2026/296",
+          "topic": "Destruction ban – derogations (when unsold apparel and footwear may still be destroyed or recycled)",
+          "status": "In force",
+          "applies": "19 Jul 2026",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2026/296/oj/eng"
+        },
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2026/2",
+          "topic": "Standard format for disclosing discarded unsold consumer products",
+          "status": "Adopted",
+          "applies": "Feb 2027",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2026/2/oj/eng"
+        },
+        {
+          "type": "Delegated Regulation (planned)",
+          "ref": "–",
+          "topic": "Iron and steel products: carbon footprint, recycled content, Digital Product Passport",
+          "status": "Expected Q4 2026 (not adopted as of 18 Nov 2026)",
+          "applies": "Not yet known",
+          "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/iron-steel_en"
+        },
+        {
+          "type": "Delegated Regulation (planned)",
+          "ref": "–",
+          "topic": "Textiles and apparel: ecodesign requirements and Digital Product Passport",
+          "status": "Expected 2027",
+          "applies": "Not yet known",
+          "url": ""
+        },
+        {
+          "type": "Delegated Regulations (planned)",
+          "ref": "–",
+          "topic": "Further priority products from the 2025–2030 working plan: aluminium, furniture, tyres, mattresses",
+          "status": "Planned 2026–2030",
+          "applies": "Not yet known",
+          "url": ""
+        }
+      ]
     },
     {
       "id": "ppwr",
@@ -827,6 +1156,10 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "packaging journal – PPWR monitoring 13 Nov 2026 (trade press – tertiary)",
           "url": "https://packaging-journal.de/ppwr-monitoring-13-11-2026/"
+        },
+        {
+          "title": "European Commission – PPWR implementation (acts and deadlines)",
+          "url": "https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_da"
         }
       ],
       "explainer": {
@@ -859,8 +1192,83 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       ],
       "check": {
         "date": "2026-11-18",
-        "note": "Checked Council, Parliament, trade press. Relief not yet agreed; labelling act delayed."
-      }
+        "note": "Checked Council, Parliament, trade press. Relief not yet agreed; labelling act delayed. Legal acts list checked."
+      },
+      "acts_title": "Legal acts under the PPWR (Rechtsakte zur Verpackungsverordnung)",
+      "acts": [
+        {
+          "type": "Delegated Regulation",
+          "ref": "number not confirmed",
+          "topic": "Exemption of pallet wrappings and straps from reuse targets",
+          "status": "Adopted Feb 2026 (per Commission implementation page)",
+          "applies": "Not confirmed",
+          "url": "https://green-forum.ec.europa.eu/packaging-and-packaging-waste-regulation-implementation_da"
+        },
+        {
+          "type": "Implementing Regulation (planned)",
+          "ref": "–",
+          "topic": "EPR producer register: registration and reporting format (Art. 44(14))",
+          "status": "Due 12 Feb 2026 – overdue; draft Aug 2026",
+          "applies": "Not yet known",
+          "url": ""
+        },
+        {
+          "type": "Implementing Act (planned)",
+          "ref": "–",
+          "topic": "Harmonised sorting and other labels (Art. 12(6), 13(2))",
+          "status": "Due 12 Aug 2026 – overdue. Commission planning: Q4 2026; trade press (13 Nov): Q2 2027",
+          "applies": "24 months after adoption",
+          "url": ""
+        },
+        {
+          "type": "Implementing Act (planned)",
+          "ref": "–",
+          "topic": "Calculation and verification of recycled content (Art. 7(8))",
+          "status": "Due 31 Dec 2026",
+          "applies": "Not yet known",
+          "url": ""
+        },
+        {
+          "type": "Delegated Act (planned)",
+          "ref": "–",
+          "topic": "Sustainability criteria for plastic recycling technologies (Art. 7(9))",
+          "status": "Due 31 Dec 2026",
+          "applies": "Not yet known",
+          "url": ""
+        },
+        {
+          "type": "Implementing Act (planned)",
+          "ref": "–",
+          "topic": "Equivalence of recycled content from outside the EU (Art. 7(10))",
+          "status": "Due 31 Dec 2026",
+          "applies": "Not yet known",
+          "url": ""
+        },
+        {
+          "type": "Implementing Act (planned)",
+          "ref": "–",
+          "topic": "Calculation rules for reuse targets (Art. 30(4))",
+          "status": "Due 30 Jun 2027",
+          "applies": "Not yet known",
+          "url": ""
+        },
+        {
+          "type": "Delegated Acts (planned)",
+          "ref": "–",
+          "topic": "Design-for-recycling criteria and recyclability grades (Art. 6(4))",
+          "status": "Due 1 Jan 2028",
+          "applies": "From 2030",
+          "url": ""
+        },
+        {
+          "type": "Implementing Act (planned)",
+          "ref": "–",
+          "topic": "Methodology for empty-space ratio (Art. 24(2))",
+          "status": "Due 12 Feb 2028",
+          "applies": "Not yet known",
+          "url": ""
+        }
+      ]
     },
     {
       "id": "batt",
@@ -906,6 +1314,10 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "LexisNexis – Commission consults on battery passport access rights (20 Oct 2026)",
           "url": "https://www.lexisnexis.co.uk/legal/news/commission-consults-on-draft-implementing-regulation-on-access-rights-to-digital-battery-passports"
+        },
+        {
+          "title": "Reusch Law – Two years of the Battery Regulation (secondary)",
+          "url": "https://www.reuschlaw.de/en/news/two-years-of-the-battery-regulation-developments-to-date-and-what-lies-ahead/"
         }
       ],
       "explainer": {
@@ -942,8 +1354,51 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       ],
       "check": {
         "date": "2026-11-18",
-        "note": "Checked Commission and law-firm reports. Access-rights act consulted; label act still pending."
-      }
+        "note": "Checked Commission and law-firm reports. Access-rights act consulted; label act still pending. Legal acts list checked."
+      },
+      "acts_title": "Legal acts under the Batteries Regulation (Rechtsakte zur Batterieverordnung)",
+      "acts": [
+        {
+          "type": "Delegated Regulation",
+          "ref": "(EU) 2025/606",
+          "topic": "Methodology for recycling efficiency and material recovery rates",
+          "status": "In force",
+          "applies": "Applies to recyclers",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2025/606/oj/eng"
+        },
+        {
+          "type": "Implementing Act (planned)",
+          "ref": "–",
+          "topic": "Battery labels: format and symbols (Art. 13)",
+          "status": "Draft Dec 2025; not adopted",
+          "applies": "Labels 18 months after adoption",
+          "url": ""
+        },
+        {
+          "type": "Implementing Act (planned)",
+          "ref": "–",
+          "topic": "Access rights to restricted battery passport data",
+          "status": "Consulted until 16 Nov 2026; adoption planned Q4 2026",
+          "applies": "Passport from 18 Feb 2027",
+          "url": ""
+        },
+        {
+          "type": "Delegated Act (planned)",
+          "ref": "–",
+          "topic": "Carbon footprint methodology for EV batteries (Art. 7)",
+          "status": "Draft stage",
+          "applies": "Not yet known",
+          "url": ""
+        },
+        {
+          "type": "Delegated Act (planned)",
+          "ref": "–",
+          "topic": "Exemptions from removability and replaceability (Art. 11)",
+          "status": "Draft Apr 2026; planned Q1 2026 – overdue",
+          "applies": "Not yet known",
+          "url": ""
+        }
+      ]
     },
     {
       "id": "r2r",
@@ -1025,6 +1480,32 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "check": {
         "date": "2026-11-18",
         "note": "Checked RIS/WKO and EUR-Lex. No change found."
+      },
+      "at": {
+        "status": "Transposed",
+        "short": "Warenreparaturrichtlinie-Umsetzungsgesetz (WaRUG), BGBl. I Nr. 60/2026 – applies since 1 Oct 2026",
+        "laws": [
+          {
+            "title": "WaRUG – BGBl. I Nr. 60/2026 (amends KSchG, VGG and VBKG)",
+            "url": "https://www.ris.bka.gv.at/Dokumente/BgblAuth/BGBLA_2026_I_60/BGBLA_2026_I_60.pdf"
+          }
+        ],
+        "points": [
+          "Amends the KSchG (consumer protection), VGG (warranty for goods) and VBKG.",
+          "Applies from 1 Oct 2026 – two months after the EU deadline of 31 Jul 2026.",
+          "Choosing repair within the legal guarantee extends it by 12 months; sellers must tell consumers about this choice."
+        ],
+        "deadline": "Done (EU deadline was 31 Jul 2026)",
+        "sources": [
+          {
+            "title": "oesterreich.gv.at – WaRUG",
+            "url": "https://www.oesterreich.gv.at/de/Gesetzliche-Neuerungen/Bundesgesetzblatt/Warenreparaturrichtlinie-Umsetzungsgesetz"
+          },
+          {
+            "title": "WKO – Recht auf Reparatur",
+            "url": "https://www.wko.at/handel/elektrohandel/recht-auf-reparatur-aenderungen-gewaehrleistungsrecht"
+          }
+        ]
       }
     },
     {
@@ -1070,6 +1551,10 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "Linklaters – delegated act on product scope",
           "url": "https://sustainablefutures.linklaters.com/post/102nbwv/eu-deforestation-regulation-commission-adopts-delegated-act-on-product-scope-and"
+        },
+        {
+          "title": "Linklaters – country risk classification adopted (secondary)",
+          "url": "https://sustainablefutures.linklaters.com/post/102kcd4/eu-deforestation-regulation-country-risk-classification-adopted-by-the-commissio"
         }
       ],
       "explainer": {
@@ -1112,8 +1597,43 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       ],
       "check": {
         "date": "2026-11-18",
-        "note": "Checked EUR-Lex and Commission. Scope act recorded (published Sep); no further delay."
-      }
+        "note": "Checked EUR-Lex and Commission. Scope act recorded (published Sep); no further delay. Legal acts list checked."
+      },
+      "acts_title": "Legal acts under the EUDR (Rechtsakte zur Entwaldungsverordnung)",
+      "acts": [
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2024/3084",
+          "topic": "EUDR Information System (amended by 2026/1565)",
+          "status": "In force",
+          "applies": "With application of the EUDR",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2024/3084/oj/eng"
+        },
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2025/1093",
+          "topic": "Country risk classification (low / standard / high risk)",
+          "status": "In force; first review planned 2026",
+          "applies": "With application of the EUDR",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/1093/oj/eng"
+        },
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2026/1565",
+          "topic": "Information System update – simplified declarations, grouping of statements",
+          "status": "In force; parts from 15 Oct 2026",
+          "applies": "With application of the EUDR",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2026/1565/oj"
+        },
+        {
+          "type": "Delegated Regulation",
+          "ref": "(EU) 2026/2102",
+          "topic": "Product scope (Annex I): leather out, soluble coffee and others in",
+          "status": "In force",
+          "applies": "Additions from 30 Dec 2027",
+          "url": "https://eur-lex.europa.eu/eli/reg_del/2026/2102/oj"
+        }
+      ]
     },
     {
       "id": "csddd",
@@ -1186,6 +1706,22 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "check": {
         "date": "2026-11-18",
         "note": "Checked EUR-Lex and Commission. No change found."
+      },
+      "at": {
+        "status": "Not yet transposed",
+        "short": "No Austrian law yet – EU deadline 26 Jul 2028",
+        "laws": [],
+        "points": [
+          "Transposition deadline 26 Jul 2028; obligations apply from 26 Jul 2029.",
+          "No Austrian draft bill found as of 18 Nov 2026. Austria has no national supply-chain law comparable to Germany's LkSG."
+        ],
+        "deadline": "26 Jul 2028",
+        "sources": [
+          {
+            "title": "EUR-Lex – Directive (EU) 2024/1760",
+            "url": "https://eur-lex.europa.eu/eli/dir/2024/1760/oj/eng"
+          }
+        ]
       }
     },
     {
@@ -1281,7 +1817,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "key_points": [
         "Generic claims such as 'eco-friendly' or 'climate friendly' are banned unless recognised excellent environmental performance can be shown.",
         "Austria: products already on the market before 27 Sep 2026 get a three-year exemption from private enforcement (new § 44 (16) UWG). This does not make them lawful. Greenpeace and ÖKOBÜRO have filed an EU complaint arguing the clause breaches EU law.",
-        "The consumer-information parts (durability, repair, warranty) are transposed separately in Austria via FAGG and KSchG.",
+        "Austria transposed the directive with the UWG amendment (BGBl. I Nr. 58/2026) and the Verbraucherrechts-Änderungsgesetz 2026 (BGBl. I Nr. 59/2026, FAGG/KSchG), both published 28 Jul 2026.",
         "In May 2026 the Commission opened infringement procedures against Member States that had not transposed; missed transposition does not delay application.",
         "On 30 Jun 2026 the EU consumer protection authorities (CPC network) agreed a common approach: when the rules start, they will take stock levels and shelf-life into account and may first give guidance before sanctions. This is not binding on courts or competitors."
       ],
@@ -1289,7 +1825,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         "level": "confirmed",
         "reasoning": "Directive and Austrian transposition are final and in application. Enforcement practice by courts and authorities is still to develop."
       },
-      "next_milestone": "First enforcement cases & Austrian FAGG/KSchG changes",
+      "next_milestone": "First enforcement cases in Austria",
       "sources": [
         {
           "title": "Schoenherr – Austrian transitional provision",
@@ -1347,11 +1883,46 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "Austria: UWG amendment – BGBl. I Nr. 58/2026 (RIS)",
           "url": "https://www.ris.bka.gv.at/eli/bgbl/I/2026/58"
+        },
+        {
+          "title": "Austria: VerbRÄG 2026 – BGBl. I Nr. 59/2026 (RIS)",
+          "url": "https://ris.bka.gv.at/Dokumente/BgblAuth/BGBLA_2026_I_59/BGBLA_2026_I_59.pdf"
         }
       ],
       "check": {
         "date": "2026-11-18",
         "note": "Checked Commission, RIS, WKO. No Commission reply on the Austrian complaint found."
+      },
+      "at": {
+        "status": "Transposed",
+        "short": "UWG amendment (BGBl. I Nr. 58/2026) and VerbRÄG 2026 (BGBl. I Nr. 59/2026) – apply since 27 Sep 2026",
+        "laws": [
+          {
+            "title": "UWG amendment – BGBl. I Nr. 58/2026 (green-claims bans, blacklist)",
+            "url": "https://www.ris.bka.gv.at/eli/bgbl/I/2026/58"
+          },
+          {
+            "title": "Verbraucherrechts-Änderungsgesetz 2026 – BGBl. I Nr. 59/2026 (FAGG, KSchG: information on durability and repair)",
+            "url": "https://ris.bka.gv.at/Dokumente/BgblAuth/BGBLA_2026_I_59/BGBLA_2026_I_59.pdf"
+          }
+        ],
+        "points": [
+          "Both laws were published on 28 Jul 2026 – four months after the EU deadline of 27 Mar 2026.",
+          "UWG (BGBl. I Nr. 58/2026): new bans on generic environmental claims, offset-based neutrality claims and unverified sustainability labels, applying from 27 Sep 2026.",
+          "VerbRÄG 2026 (BGBl. I Nr. 59/2026): new pre-contract information on durability, repair and guarantees in the FAGG and KSchG, for contracts concluded after 26 Sep 2026.",
+          "Transitional rule (§ 44 (16) UWG): goods already on the market before 27 Sep 2026 are shielded from private claims for three years. Contested – NGOs have complained to the Commission."
+        ],
+        "deadline": "Done (EU deadline was 27 Mar 2026)",
+        "sources": [
+          {
+            "title": "RIS – BGBl. I Nr. 58/2026",
+            "url": "https://www.ris.bka.gv.at/eli/bgbl/I/2026/58"
+          },
+          {
+            "title": "RIS – BGBl. I Nr. 59/2026",
+            "url": "https://ris.bka.gv.at/Dokumente/BgblAuth/BGBLA_2026_I_59/BGBLA_2026_I_59.pdf"
+          }
+        ]
       }
     },
     {
@@ -1699,6 +2270,31 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "check": {
         "date": "2026-11-18",
         "note": "Checked Commission agenda reports. Circular Economy Act not yet presented."
+      },
+      "at": {
+        "status": "Transposed",
+        "short": "AWG 2002 and Elektroaltgeräteverordnung (EAG-VO)",
+        "laws": [
+          {
+            "title": "Abfallwirtschaftsgesetz 2002 (AWG 2002)",
+            "url": "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20002086"
+          },
+          {
+            "title": "Elektroaltgeräteverordnung (EAG-VO) – overview (BMLUK)",
+            "url": "https://www.bmluk.gv.at/themen/abfall-und-kreislaufwirtschaft/abfallrecht/abfallwirtschaftsgesetz-verordnung/elektroaltgeraete.html"
+          }
+        ],
+        "points": [
+          "Producer registration, take-back and financing duties come from the AWG 2002 and the EAG-VO.",
+          "A new transposition step will follow once the EU revision (Circular Economy Act) is adopted – if the revision becomes a regulation, it would apply directly."
+        ],
+        "deadline": "Done – watch the EU revision",
+        "sources": [
+          {
+            "title": "BMLUK – Elektroaltgeräte",
+            "url": "https://www.bmluk.gv.at/themen/abfall-und-kreislaufwirtschaft/abfallrecht/abfallwirtschaftsgesetz-verordnung/elektroaltgeraete.html"
+          }
+        ]
       }
     },
     {
@@ -1781,6 +2377,27 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "check": {
         "date": "2026-11-18",
         "note": "Checked EUR-Lex. Exemption update still not adopted."
+      },
+      "at": {
+        "status": "Transposed",
+        "short": "Elektroaltgeräteverordnung (EAG-VO), § 4 – exemptions apply via dynamic reference",
+        "laws": [
+          {
+            "title": "EAG-VO – RoHS substance restrictions (BMLUK)",
+            "url": "https://www.bmluk.gv.at/themen/abfall-und-kreislaufwirtschaft/abfallsammlung-behandlung-und-verbringung/elektroaltgeraete/recht/rohs-beschraenkung.html"
+          }
+        ],
+        "points": [
+          "RoHS is implemented in § 4 of the Elektroaltgeräteverordnung.",
+          "§ 4 (2) EAG-VO refers to Annexes III and IV of the RoHS Directive 'as amended', so new or expiring EU exemptions take effect in Austria without changing the ordinance."
+        ],
+        "deadline": "Done – EU exemption changes apply automatically",
+        "sources": [
+          {
+            "title": "BMLUK – RoHS restrictions",
+            "url": "https://www.bmluk.gv.at/themen/abfall-und-kreislaufwirtschaft/abfallsammlung-behandlung-und-verbringung/elektroaltgeraete/recht/rohs-beschraenkung.html"
+          }
+        ]
       }
     },
     {
@@ -1894,6 +2511,10 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         {
           "title": "EUR-Lex – official law text (F-gas Regulation (EU) 2024/573)",
           "url": "https://eur-lex.europa.eu/eli/reg/2024/573/oj/eng"
+        },
+        {
+          "title": "European Commission – new F-gas implementing rules (Sep 2024)",
+          "url": "https://climate.ec.europa.eu/news-other-reads/news/f-gases-new-rules-labelling-reporting-certification-and-f-gas-portal-2024-09-20_en"
         }
       ],
       "explainer": {
@@ -1924,8 +2545,43 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       ],
       "check": {
         "date": "2026-11-18",
-        "note": "Checked Commission F-gas pages and EUR-Lex. No change found."
-      }
+        "note": "Checked Commission F-gas pages and EUR-Lex. No change found. Legal acts list checked."
+      },
+      "acts_title": "Legal acts under the F-gas Regulation (Rechtsakte zur F-Gas-Verordnung)",
+      "acts": [
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2024/2174",
+          "topic": "Format of F-gas labels on containers and equipment",
+          "status": "In force",
+          "applies": "Since 1 Jan 2025",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2024/2174/oj/eng"
+        },
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2024/2195",
+          "topic": "Format of the annual F-gas report",
+          "status": "In force",
+          "applies": "Reports from 31 Mar 2025",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2024/2195/oj/eng"
+        },
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2024/2215",
+          "topic": "Minimum requirements for technician certification",
+          "status": "In force",
+          "applies": "Since 2025",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2024/2215/oj/eng"
+        },
+        {
+          "type": "Implementing Regulation",
+          "ref": "(EU) 2024/2473",
+          "topic": "Registration in the F-gas Portal",
+          "status": "In force",
+          "applies": "Since 2025",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2024/2473/oj"
+        }
+      ]
     },
     {
       "id": "eed",
@@ -2011,6 +2667,32 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "check": {
         "date": "2026-11-18",
         "note": "Checked RIS and WKO. Austrian EEffG amendment still pending."
+      },
+      "at": {
+        "status": "Overdue",
+        "short": "EEffG (BGBl. I Nr. 59/2023) still uses old size-based rules – EED III amendment pending",
+        "laws": [
+          {
+            "title": "Energieeffizienzgesetz – BGBl. I Nr. 59/2023",
+            "url": "https://www.ris.bka.gv.at/eli/bgbl/I/2023/59"
+          }
+        ],
+        "points": [
+          "The current EEffG requires large companies to do an energy audit every four years or run an energy/environmental management system.",
+          "The recast directive switches to energy-use thresholds (10 TJ audit, 85 TJ management system). Austria has not yet adopted the amendment; WKO still described it as upcoming on 5 Nov 2026.",
+          "The EU transposition deadline was 11 Oct 2025."
+        ],
+        "deadline": "Overdue (EU deadline 11 Oct 2025)",
+        "sources": [
+          {
+            "title": "WKO – Energieeffizienzgesetz-Novelle 2026",
+            "url": "https://www.wko.at/transport-verkehr/energieeffizienzgesetz-novelle-2026"
+          },
+          {
+            "title": "RIS – BGBl. I Nr. 59/2023",
+            "url": "https://www.ris.bka.gv.at/eli/bgbl/I/2023/59"
+          }
+        ]
       }
     },
     {
@@ -2084,6 +2766,42 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "check": {
         "date": "2026-11-18",
         "note": "Checked EUR-Lex and BMLUK. No change found."
+      },
+      "at": {
+        "status": "Partly transposed",
+        "short": "In force via the AWG 2002 – only the 2025 revision is still pending (deadline 17 Jun 2027)",
+        "laws": [
+          {
+            "title": "Abfallwirtschaftsgesetz 2002 (AWG 2002), current version",
+            "url": "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20002086"
+          },
+          {
+            "title": "AWG-Novelle Kreislaufwirtschaftspaket – BGBl. I Nr. 200/2021 (transposed the 2018 amendment)",
+            "url": "https://www.ris.bka.gv.at/eli/bgbl/I/2021/200/20211210"
+          }
+        ],
+        "points": [
+          "There will be no new AWG. The AWG 2002 is Austria's framework waste law and is amended each time the EU Waste Framework Directive changes.",
+          "2008 Directive (2008/98/EC): transposed into the AWG 2002 years ago.",
+          "2018 amendment (2018/851, circular economy package): transposed through the AWG-Novelle Kreislaufwirtschaftspaket, BGBl. I Nr. 200/2021.",
+          "2025 amendment (2025/1892): adds food waste targets and textile EPR. This is the part not yet transposed – Austria must amend the AWG again by 17 Jun 2027. Detailed textile EPR rules may go into a separate ordinance under the AWG, like the packaging and WEEE ordinances.",
+          "A separate AWG amendment is also planned to align with the PPWR. Austria may combine both into one amendment; nothing has been announced yet. No draft found as of 18 Nov 2026."
+        ],
+        "deadline": "17 Jun 2027 (2025 revision)",
+        "sources": [
+          {
+            "title": "RIS – AWG 2002",
+            "url": "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20002086"
+          },
+          {
+            "title": "RIS – BGBl. I Nr. 200/2021",
+            "url": "https://www.ris.bka.gv.at/eli/bgbl/I/2021/200/20211210"
+          },
+          {
+            "title": "WKO – AWG-Novelle Kreislaufwirtschaftspaket",
+            "url": "https://www.wko.at/abfall/awg-novelle-kreislaufwirtschaftspaket-verlautbart"
+          }
+        ]
       }
     },
     {
@@ -2104,6 +2822,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       },
       "summary": "Producers of clothing, footwear and household textiles will pay for collection, sorting, reuse and recycling through national EPR schemes. Fees will be higher for fast- and disposable-fashion practices.",
       "key_points": [
+        "Not part of the ESPR: textile EPR comes from the revised Waste Framework Directive (EU) 2025/1892 and covers end of life – collection, sorting, recycling and fees. The ESPR (Regulation (EU) 2024/1781) separately sets design rules for textiles through a delegated act expected in 2027, and already bans destroying unsold clothing.",
         "Covers clothing, accessories, hats, footwear, blankets, bed and kitchen linen and curtains; Member States may add mattresses.",
         "Producer = whoever first makes the product available in a Member State, including online sellers from abroad.",
         "Micro-enterprises get one extra year, until 17 April 2029.",
@@ -2126,7 +2845,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         }
       ],
       "explainer": {
-        "what": "Mandatory producer responsibility for textiles: brands, importers and sellers pay for what happens to textiles after use.",
+        "what": "Mandatory producer responsibility for textiles: brands, importers and sellers pay for what happens to textiles after use. It is part of the Waste Framework Directive, not of the ESPR.",
         "why": "Textile consumption keeps rising while only a small share is reused or recycled; producers currently bear none of the end-of-life cost.",
         "who": "Manufacturers, importers, distributors and online sellers who first make clothing, footwear or household textiles available in a Member State.",
         "core": "Register with the national scheme, report quantities, pay eco-modulated EPR fees, support collection and sorting."
@@ -2154,6 +2873,23 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "check": {
         "date": "2026-11-18",
         "note": "Checked BMLUK. Austrian scheme still in study phase; no draft law found."
+      },
+      "at": {
+        "status": "Not yet transposed",
+        "short": "Austrian textile EPR scheme still being designed – transposition by 17 Jun 2027",
+        "laws": [],
+        "points": [
+          "There will be no new law: textile EPR will be added to the existing AWG 2002 by amendment, together with the rest of the 2025 Waste Framework revision – possibly with a separate textile ordinance under the AWG.",
+          "The environment ministry (BMLUK) published an interim study on an Austrian textile EPR system in June 2026; no draft law yet.",
+          "EPR schemes must run in every Member State by 17 Apr 2028."
+        ],
+        "deadline": "17 Jun 2027 (schemes by 17 Apr 2028)",
+        "sources": [
+          {
+            "title": "BMLUK – Textile EPR study (interim report)",
+            "url": "https://www.bmluk.gv.at/service/publikationen/klima-und-umwelt/textilien-epr-studie-zwischenbericht.html"
+          }
+        ]
       }
     },
     {
@@ -2511,6 +3247,16 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       "so_what": "No change to how you calculate emissions for FY 2026 or FY 2027 – keep using the current standards. Watch the Scope 2 market-based rules before signing long-term green electricity contracts.",
       "source_url": "https://ghgprotocol.org/blog/ghg-protocol-announces-key-standard-development-updates",
       "source_title": "GHG Protocol"
+    },
+    {
+      "date": "2026-07-28",
+      "reg": "empco",
+      "significance": "medium",
+      "headline": "Austria publishes EmpCo laws (UWG and VerbRÄG 2026) – added late",
+      "detail": "The UWG amendment (BGBl. I Nr. 58/2026) brings in the green-claims bans. The Verbraucherrechts-Änderungsgesetz 2026 (BGBl. I Nr. 59/2026) adds information duties on durability and repair to the FAGG and KSchG. Both apply from 27 September 2026. This was recorded late.",
+      "so_what": "Austrian law now matches the EU rules. Update pre-contract and web shop information for contracts concluded from 27 Sep 2026.",
+      "source_url": "https://ris.bka.gv.at/Dokumente/BgblAuth/BGBLA_2026_I_59/BGBLA_2026_I_59.pdf",
+      "source_title": "RIS"
     },
     {
       "date": "2026-07-19",
@@ -3404,8 +4150,10 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         <p>Both sources are named, the primary source is followed, and the more conservative reading is shown. The conflict is noted in the entry.</p>
         <h3>Upgrading a source</h3>
         <p>When a primary source becomes available for something first reported by a secondary or tertiary source (e.g. publication in the Official Journal), the primary link is added and the entry is re-rated.</p>
+        <h3>Acts under a framework regulation</h3>
+        <p>Framework laws such as the ESPR, PPWR or Batteries Regulation get much of their detail through delegated and implementing acts, one product group at a time. Each of these acts is listed in a "Legal acts" table in the entry it belongs to (ESPR, PPWR, Batteries, EUDR, CBAM, Taxonomy, CSRD, F-gas), with its number, topic, status and application date, and new ones are added at every update.</p>
         <h3>Austrian transposition</h3>
-        <p>EU regulations apply directly. EU directives only bind companies once Austria has transposed them – unless a deadline passes, in which case the EU text still shows what is coming. Austrian laws are checked in RIS (in force) and on the Parliament's website (drafts and bills).</p>
+        <p>Every directive in the tracker has an "Austrian transposition" box on the Regulations tab and an "In Austria" line in the Regulation guide: whether it has been transposed, by which Austrian law (with Federal Law Gazette number), what is still missing and the deadline. Regulations have no such box because they apply directly. EU regulations apply directly. EU directives only bind companies once Austria has transposed them – unless a deadline passes, in which case the EU text still shows what is coming. Austrian laws are checked in RIS (in force) and on the Parliament's website (drafts and bills).</p>
 
         <h2>Primary sources checked</h2>
         <div class="tscroll"><table class="src"><thead><tr><th>Source</th><th>What it is used for</th></tr></thead><tbody>
@@ -3494,6 +4242,15 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
     document.querySelector('.tabs button[data-v="regs"]').click();
     const el=document.getElementById('reg-'+b.dataset.open); if(el){el.open=true; el.scrollIntoView({block:'start'});}
   });
+  const atCls = s => /^Transposed/.test(s)?'ok':/Partly/.test(s)?'part':/Overdue/.test(s)?'late':'open';
+  const atBox = r => `<div class="atbox"><div class="athead"><h5>Austrian transposition</h5><span class="atpill at-${atCls(r.at.status)}">${esc(r.at.status)}</span><span class="atdl">Deadline: ${esc(r.at.deadline)}</span></div>
+    <p class="atshort">${esc(r.at.short)}</p><ul>${r.at.points.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+    ${r.at.laws.length?`<div class="csrc">Austrian law: ${r.at.laws.map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.title)}</a>`).join(' · ')}</div>`:''}
+    <div class="csrc">Sources: ${r.at.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a> ${stype(s.url)}`).join(' · ')}</div></div>`;
+  const actsBox = r => `<div class="atbox"><div class="athead"><h5>${esc(r.acts_title||'Legal acts')}</h5></div>
+    <div class="tscroll"><table class="src acts"><thead><tr><th>Type</th><th>Number</th><th>What it covers</th><th>Status</th><th>Applies</th></tr></thead><tbody>
+    ${r.acts.map(a=>`<tr><td>${esc(a.type)}</td><td style="white-space:nowrap">${a.url&&a.ref!=='–'?`<a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.ref)}</a>`:esc(a.ref)}</td><td>${esc(a.topic)}</td><td>${esc(a.status)}</td><td>${esc(a.applies)}</td></tr>`).join('')}
+    </tbody></table></div></div>`;
   function render(){
     const ms = D.milestones.filter(m=>active.has(m.reg));
     const ups = D.updates.filter(u=>active.has(u.reg)).sort((a,b)=>b.date.localeCompare(a.date));
@@ -3561,6 +4318,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           ${r.compliance?`<div class="comp"><div><h5>Who it applies to</h5><p>${esc(r.compliance.applies_to)}</p></div>
             <div><h5>If you don't comply</h5><p class="max">${esc(r.compliance.max_penalty)}</p><ul>${r.compliance.consequences.map(c=>`<li>${esc(c)}</li>`).join('')}</ul>
             <div class="csrc">Sources: ${r.compliance.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a> ${stype(s.url)}`).join(' · ')}</div></div></div>`:''}
+          ${r.acts?actsBox(r):''}
+          ${r.at?atBox(r):''}
         </div>
       </details>`).join('')).join('') || '<p class="empty">Select at least one regulation in the filter.</p>';
 
@@ -3571,7 +4330,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         <article class="gcard" style="--c:${r.color}">
           <h3>${esc(r.short)} <span style="font-family:var(--sans);font-size:13px;color:var(--ink-3);font-weight:500">${esc(r.de)}</span></h3>
           <div class="meta"><span class="tag kind ${r.group==='standards'?'std':''}">${esc(r.kind)}</span> ${esc(r.ref)}</div>
-          <dl><dt>WHAT IT IS</dt><dd>${esc(x.what)}</dd><dt>WHY IT EXISTS</dt><dd>${esc(x.why)}</dd><dt>WHO IS AFFECTED</dt><dd>${esc(x.who)}</dd><dt>CORE REQUIREMENTS</dt><dd>${esc(x.core)}</dd>${r.compliance?`<dt>IF YOU DON'T COMPLY</dt><dd>${esc(r.compliance.max_penalty)}</dd>`:''}</dl>
+          <dl><dt>WHAT IT IS</dt><dd>${esc(x.what)}</dd><dt>WHY IT EXISTS</dt><dd>${esc(x.why)}</dd><dt>WHO IS AFFECTED</dt><dd>${esc(x.who)}</dd><dt>CORE REQUIREMENTS</dt><dd>${esc(x.core)}</dd>${r.compliance?`<dt>IF YOU DON'T COMPLY</dt><dd>${esc(r.compliance.max_penalty)}</dd>`:''}${r.acts?`<dt>LEGAL ACTS (RECHTSAKTE)</dt><dd>${r.acts.filter(a=>!/planned/i.test(a.type)).length} adopted, ${r.acts.filter(a=>/planned/i.test(a.type)).length} planned – full list on the Regulations tab</dd>`:''}${r.at?`<dt>IN AUSTRIA</dt><dd><span class="atpill at-${atCls(r.at.status)}">${esc(r.at.status)}</span> ${esc(r.at.short)}</dd>`:''}</dl>
           ${lawBlock(r)}
           <div class="now"><span><b>WHERE IT STANDS</b>${esc(r.status_label)}</span><button class="linkbtn" data-open="${r.id}">Dates & changes →</button></div>
         </article>`}).join('')}</div></div>`).join('') || '<p class="empty">Select at least one regulation in the filter.</p>';
@@ -3684,7 +4443,9 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
           f.lines(r.short+'  ('+r.de+')',{bold:true,color:G,size:10.5,after:0.4});
           f.lines(r.kind+' | '+r.ref,{size:8.5,color:MUT,after:1.2});
           [['What it is',x.what],['Why it exists',x.why],['Who is affected',x.who],['Core requirements',x.core]].forEach(([k,v])=>{ if(!v) return; f.lines(k.toUpperCase(),{bold:true,size:8,color:GM,after:0.2}); f.lines(v,{after:1.2}); });
-          f.lines('WHERE IT STANDS',{bold:true,size:8,color:GM,after:0.2}); f.lines(r.status_label,{after:4});
+          f.lines('WHERE IT STANDS',{bold:true,size:8,color:GM,after:0.2}); f.lines(r.status_label,{after:r.at?1.2:4});
+          if(r.acts){ f.lines((r.acts_title||'Legal acts').toUpperCase(),{bold:true,size:8,color:GM,after:0.2}); r.acts.forEach(a=>f.lines('- '+a.type+' '+a.ref+': '+a.topic+' ('+a.status+')',{size:9,after:0.6})); f.y+=2; }
+          if(r.at){ f.lines('IN AUSTRIA',{bold:true,size:8,color:GM,after:0.2}); f.lines(r.at.status+': '+r.at.short,{after:4}); }
         });
       });
     },
@@ -3741,6 +4502,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         lab('What matters'); r.key_points.forEach(k=>txt(k,{indent:4,bullet:true,after:0.8})); yy+=1.5;
         lab('Why this confidence rating'); txt(r.confidence.reasoning+(r.verified?'':' Not yet verified against a primary source.'),{after:2.5});
         lab('Next milestone'); txt(r.next_milestone,{after:2.5});
+        if(r.acts){ lab(r.acts_title||'Legal acts'); r.acts.forEach(a=>txt(a.type+' '+a.ref+': '+a.topic+' - '+a.status+(a.applies&&a.applies!=='Not yet known'?' (applies '+a.applies+')':''),{indent:4,bullet:true,after:0.8})); yy+=1.5; }
+        if(r.at){ lab('Austrian transposition'); txt(r.at.status+' - deadline: '+r.at.deadline,{bold:true,after:0.8}); txt(r.at.short,{after:0.8}); r.at.points.forEach(x=>txt(x,{indent:4,bullet:true,after:0.8})); r.at.laws.forEach(l=>txt(l.title+' - '+l.url,{indent:4,bullet:true,size:8.5,color:MUT,after:0.6})); yy+=1.5; }
         if(r.check){ lab('Last checked'); txt(fmt(r.check.date)+' - '+r.check.note,{after:2.5}); }
         if(r.compliance){ lab('Who it applies to'); txt(r.compliance.applies_to,{after:2.5});
           lab("If you don't comply"); txt(r.compliance.max_penalty,{bold:true,after:0.8}); r.compliance.consequences.forEach(c=>txt(c,{indent:4,bullet:true,after:0.8})); yy+=1.5; }
