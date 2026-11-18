@@ -13,7 +13,7 @@
   --rule:#DCE1EA; --rule-2:#EEF1F5; --blue:#1D4E9E; --blue-soft:#E6EEF9;
   --ok:#1E7A4C; --ok-soft:#E3F3EA; --warn:#A8620B; --warn-soft:#FBF0DF;
   --info:#1D4E9E; --info-soft:#E6EEF9; --mute:#6B7486; --mute-soft:#EEF0F4;
-  --today:#C62F3B;
+  --today:#C62F3B; --forest:#185225; --forest-l:#A9D9AD;
   --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
   box-sizing:border-box;
@@ -24,14 +24,14 @@
     --paper:#0F1522; --surface:#161E2E; --ink:#E7ECF5; --ink-2:#B3BDD0; --ink-3:#8791A6;
     --rule:#2A3548; --rule-2:#1D2638; --blue:#7FA8EE; --blue-soft:#1B2A45;
     --ok:#5CC48E; --ok-soft:#15301F; --warn:#E3A450; --warn-soft:#352612;
-    --info:#7FA8EE; --info-soft:#1B2A45; --mute:#9AA3B5; --mute-soft:#222B3B; --today:#F06470;
+    --info:#7FA8EE; --info-soft:#1B2A45; --mute:#9AA3B5; --mute-soft:#222B3B; --today:#F06470; --forest:#A9D9AD; --forest-l:#185225;
   }
 }
 :root[data-theme="dark"]{
   --paper:#0F1522; --surface:#161E2E; --ink:#E7ECF5; --ink-2:#B3BDD0; --ink-3:#8791A6;
   --rule:#2A3548; --rule-2:#1D2638; --blue:#7FA8EE; --blue-soft:#1B2A45;
   --ok:#5CC48E; --ok-soft:#15301F; --warn:#E3A450; --warn-soft:#352612;
-  --info:#7FA8EE; --info-soft:#1B2A45; --mute:#9AA3B5; --mute-soft:#222B3B; --today:#F06470;
+  --info:#7FA8EE; --info-soft:#1B2A45; --mute:#9AA3B5; --mute-soft:#222B3B; --today:#F06470; --forest:#A9D9AD; --forest-l:#185225;
 }
 *,*::before,*::after{box-sizing:inherit}
 html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
@@ -161,6 +161,14 @@ footer{margin-top:40px;font-size:12.5px;color:var(--ink-3);max-width:80ch}
 .stag.ter{background:var(--warn-soft);color:var(--warn)}
 .prose h3{font-family:var(--sans);font-size:15px;margin:18px 0 4px}
 .prose ul{padding-left:20px}
+.headright{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.pdfbox{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.pdflab{font-size:12px;font-weight:600;color:var(--ink-3)}
+.pdfbox button{font:600 12.5px var(--sans);padding:6px 11px;border-radius:6px;border:1px solid var(--forest);background:var(--surface);color:var(--forest);cursor:pointer}
+.pdfbox button#pdfall{background:var(--forest);color:var(--forest-l);border-color:var(--forest)}
+.pdfbox button:hover{filter:brightness(.95)}
+#pdfstatus{font-size:12px;color:var(--ink-3);max-width:34ch;text-align:right;min-height:1em}
+@media (max-width:900px){.headright{align-items:flex-start}.pdfbox{justify-content:flex-start}#pdfstatus{text-align:left}}
 .chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
 /* guide */
 .gintro{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:6px}
@@ -3302,7 +3310,9 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
         <h1 id="title">What's coming next</h1>
         <p id="lede">New and changing EU rules on reporting, climate and energy, products, waste, chemicals, supply chains and green claims – plus Austrian waste law, the GHG Protocol and ISO standards – with dates, status and what each means for companies.</p>
       </div>
-      <div class="asof">Data as of <b id="asof"></b></div>
+      <div class="headright"><div class="asof">Data as of <b id="asof"></b></div>
+        <div class="pdfbox" id="pdfwrap"><span class="pdflab">Export PDF</span><button type="button" id="pdfcur">This tab</button><button type="button" id="pdfall">All tabs</button></div>
+        <div id="pdfstatus" aria-live="polite"></div></div>
     </div>
 
     <section class="view on" id="v-overview">
@@ -3432,6 +3442,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
   </main>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 <script>
 (function(){
   const D = JSON.parse(document.getElementById('data').textContent);
@@ -3466,7 +3478,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
   const titles = {overview:["What's coming next","New and changing EU rules on reporting, climate and energy, products, waste, chemicals, supply chains and green claims – plus Austrian waste law, the GHG Protocol and ISO standards – with dates, status and what each means for companies."],
     guide:["Regulation guide","What each EU rule and standard is about and why it exists – one page, grouped by theme."],
     updates:["Updates","Dated developments, newest first. Each item says what changed and what it means for companies."],
-    regs:["Regulations","One entry per rule: where it stands, what matters, and how certain it is. Open an entry for detail."],
+    regs:["Regulations","One entry per rule: where it stands, what matters, and how certain it is. Open an entry for detail – opened entries are included in full in the PDF export."],
     timeline:["Timeline","Key dates from 2026 to 2030. The red line is today."],
     method:["Method","Scope, sources, confidence ratings and how the dashboard is kept current."]};
   document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{
@@ -3576,11 +3588,278 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
       `<div class="yrs" style="grid-template-columns:repeat(5,1fr)">${years.map(y=>`<div>${y}</div>`).join('')}</div>` +
       regs.map(r=>`<div class="lane"><div class="ln"><span class="sw" style="background:${r.color};margin-top:4px"></span>${esc(r.short)}</div>
         <div class="track" style="--c:${r.color}">
-          ${D.milestones.filter(m=>m.reg===r.id).map(m=>`<button class="ms ${m.projected?'proj':''} ${m.big?'big':''}" style="left:${pos(m.date)}" aria-label="${esc(m.label)}, ${fmt(m.date)}"><span class="tip">${m.projected?'Expected ':''}${fmt(m.date)}<br>${esc(m.label)}</span></button>`).join('')}
+          ${D.milestones.filter(m=>m.reg===r.id&&m.date>='2026-01-01'&&m.date<'2031-01-01').map(m=>`<button class="ms ${m.projected?'proj':''} ${m.big?'big':''}" style="left:${pos(m.date)}" aria-label="${esc(m.label)}, ${fmt(m.date)}"><span class="tip">${m.projected?'Expected ':''}${fmt(m.date)}<br>${esc(m.label)}</span></button>`).join('')}
           ${tp>=0&&tp<=100?`<div class="todayline" style="left:${tp}%"></div>`:''}
         </div></div>`).join('') ;
   }
   render();
+  {
+  // ===== PDF export (Claude version only) =====
+  const pdfUI = document.getElementById('pdfwrap');
+  const TABNAMES = {overview:'Overview',guide:'Regulation guide',updates:'Updates',regs:'Regulations',timeline:'Timeline',method:'Method'};
+  const MAP = {'₂':'2','₃':'3','≈':'approx. ','→':'->','←':'<-','↗':'','✓':'yes','✗':'no','≤':'<=','≥':'>=','‑':'-','−':'-',' ':' ',' ':' ',' ':' '};
+  const CP = new Set('€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ'.split(''));
+  const clean = s => String(s==null?'':s).replace(/[^\x00-\xff]/g, c => MAP[c]!==undefined ? MAP[c] : (CP.has(c) ? c : ''));
+  const G=[24,82,37], GL=[169,217,173], GT=[229,244,230], GM=[24,82,37], INK=[30,34,38], MUT=[95,104,112], RULE=[205,215,208];
+  const PW=210, PH=297, M=14, TOP=30, BOT=280, CW=PW-2*M;
+  const SIGC = {high:[183,28,28],medium:[166,98,11],low:[95,104,112]};
+  const CONF = {confirmed:'Confirmed',high:'High',medium:'Medium',low:'Low'};
+
+  function startTab(st, key){
+    if(st.started) st.doc.addPage(); st.started = true;
+    st.tabStart.push([st.doc.getNumberOfPages(), TABNAMES[key]]);
+    return TOP;
+  }
+  function heading(doc, text, x, y, w){
+    doc.setFont('helvetica','bold'); doc.setFontSize(11.5); doc.setTextColor(...G);
+    doc.text(clean(text), x, y);
+    doc.setDrawColor(...RULE); doc.setLineWidth(0.3); doc.line(x, y+1.6, x+w, y+1.6);
+    doc.setFont('helvetica','normal'); doc.setFontSize(10); doc.setTextColor(...INK);
+    return y+7;
+  }
+  const tableStyle = {
+    theme:'plain', margin:{left:M,right:M,top:TOP,bottom:PH-BOT},
+    styles:{font:'helvetica',fontSize:9,textColor:INK,cellPadding:{top:1.4,bottom:1.4,left:1.6,right:1.6},overflow:'linebreak',valign:'top',lineColor:RULE,lineWidth:{bottom:0.2}},
+    headStyles:{fillColor:G,textColor:[255,255,255],fontStyle:'bold',fontSize:9,lineWidth:0},
+    alternateRowStyles:{fillColor:GT},
+    rowPageBreak:'avoid'
+  };
+  function table(doc, y, head, body, colStyles, extra){
+    doc.autoTable(Object.assign({}, tableStyle, {startY:y, head:[head.map(clean)], body:body.map(r=>r.map(clean)), columnStyles:colStyles||{}}, extra||{}));
+    return doc.lastAutoTable.finalY + 6;
+  }
+  // Two-column text flow
+  function Flow(doc, y){ this.doc=doc; this.col=0; this.y=y; this.top=y; }
+  Flow.prototype.x = function(){ return M + this.col*(CW+8); };
+  Flow.prototype.room = function(h){
+    if(this.y + h <= BOT) return;
+    this.doc.addPage(); this.col=0; this.top=TOP; this.y=TOP;
+  };
+  Flow.prototype.lines = function(text, o){
+    o=o||{}; const d=this.doc, size=o.size||10, lh=size*0.42+0.4;
+    d.setFont('helvetica', o.bold?'bold':'normal'); d.setFontSize(size); d.setTextColor(...(o.color||INK));
+    const ls = d.splitTextToSize(clean(text), CW - (o.indent||0));
+    ls.forEach(l=>{ this.room(lh); d.text(l, this.x()+(o.indent||0), this.y+size*0.35); this.y += lh; });
+    this.y += (o.after==null?1.2:o.after);
+  };
+  Flow.prototype.block = function(minH){ this.room(minH||14); };
+  Flow.prototype.head = function(text){
+    this.room(14); const d=this.doc;
+    d.setFillColor(...GL); d.rect(this.x(), this.y-1, CW, 7, 'F');
+    d.setFont('helvetica','bold'); d.setFontSize(10.5); d.setTextColor(...G);
+    d.text(clean(text), this.x()+2, this.y+3.8); this.y += 9;
+  };
+
+  const sel = () => D.regulations.filter(r=>active.has(r.id));
+  const rn = id => (REG[id]||{}).short || id;
+
+  const builders = {
+    overview(st){
+      const doc=st.doc; let y=startTab(st,'overview');
+      const regs=sel(), laws=regs.filter(r=>r.group!=='standards');
+      const stats=[['Apply now (fully or in part)',laws.filter(r=>r.phase>=4).length],['Adopted, applying later',laws.filter(r=>r.phase>=2&&r.phase<4).length],['Proposed, paused or withdrawn',laws.filter(r=>r.phase<2).length],['Voluntary standards tracked',regs.filter(r=>r.group==='standards').length]];
+      const bw=(PW-2*M-9)/4;
+      stats.forEach((s,i)=>{ const x=M+i*(bw+3); doc.setFillColor(...GL); doc.rect(x,y-2,bw,16,'F'); doc.setFillColor(...GM); doc.rect(x,y-2,1.2,16,'F');
+        doc.setFont('helvetica','bold'); doc.setFontSize(15); doc.setTextColor(...G); doc.text(String(s[1]),x+4,y+5.5);
+        doc.setFont('helvetica','normal'); doc.setFontSize(8); doc.setTextColor(...MUT); doc.text(doc.splitTextToSize(s[0],bw-6),x+4,y+9.5); });
+      y+=19;
+      const sm={styles:Object.assign({},tableStyle.styles,{fontSize:8.5,cellPadding:{top:0.9,bottom:0.9,left:1.4,right:1.4}})};
+      y=heading(doc,'Next deadlines',M,y,PW-2*M);
+      const next=D.milestones.filter(m=>active.has(m.reg)&&parse(m.date)>=today).sort((a,b)=>a.date.localeCompare(b.date)).slice(0,6);
+      y=table(doc,y,['Days','Date','Rule','Milestone'],next.map(m=>[String(Math.round((parse(m.date)-today)/864e5)),(m.projected?'~ ':'')+fmt(m.date),rn(m.reg),m.label+(m.projected&&!/expected/i.test(m.label)?' (expected)':'')]),{0:{cellWidth:12,halign:'right',fontStyle:'bold',textColor:G},1:{cellWidth:26},2:{cellWidth:32}},sm)-1;
+      y=heading(doc,'Latest changes',M,y,PW-2*M);
+      const ups=D.updates.filter(u=>active.has(u.reg)).sort((a,b)=>b.date.localeCompare(a.date)).slice(0,4);
+      y=table(doc,y,['Date','Rule','What changed'],ups.map(u=>[fmt(u.date),rn(u.reg),u.headline]),{0:{cellWidth:26},1:{cellWidth:32}},sm)-1;
+      y=heading(doc,'Priority actions',M,y,PW-2*M);
+      const pa=D.priority_actions.filter(a=>active.has(a.reg));
+      table(doc,y,['#','Action','Rule','What to do'],pa.map((a,i)=>[String(i+1),a.title,rn(a.reg),a.what]),{0:{cellWidth:7,textColor:G,fontStyle:'bold'},1:{cellWidth:58,fontStyle:'bold'},2:{cellWidth:26}},sm);
+    },
+    guide(st){
+      const doc=st.doc; const f=new Flow(doc,startTab(st,'guide'));
+      const regs=sel();
+      D.groups.filter(g=>regs.some(r=>r.group===g.id)).forEach(g=>{
+        f.head(g.name);
+        regs.filter(r=>r.group===g.id).forEach(r=>{
+          const x=r.explainer||{}; f.block(30);
+          f.lines(r.short+'  ('+r.de+')',{bold:true,color:G,size:10.5,after:0.4});
+          f.lines(r.kind+' | '+r.ref,{size:8.5,color:MUT,after:1.2});
+          [['What it is',x.what],['Why it exists',x.why],['Who is affected',x.who],['Core requirements',x.core]].forEach(([k,v])=>{ if(!v) return; f.lines(k.toUpperCase(),{bold:true,size:8,color:GM,after:0.2}); f.lines(v,{after:1.2}); });
+          f.lines('WHERE IT STANDS',{bold:true,size:8,color:GM,after:0.2}); f.lines(r.status_label,{after:4});
+        });
+      });
+    },
+    updates(st){
+      const doc=st.doc; let y=startTab(st,'updates');
+      const all=D.updates.filter(u=>active.has(u.reg)).sort((a,b)=>b.date.localeCompare(a.date));
+      const ups=all.filter(u=>(today-parse(u.date))/864e5<=60), older=all.filter(u=>(today-parse(u.date))/864e5>60);
+      y=heading(doc,'Last 60 days – in detail',M,y,PW-2*M);
+      const tier=u=>{ const s=stype(u.source_url); return s.indexOf('Primary')>-1?'primary':s.indexOf('Tertiary')>-1?'tertiary':'secondary'; };
+      table(doc,y,['Date','Rule','What happened','What it means for companies','Source'],
+        ups.map(u=>[fmt(u.date)+'\n'+u.significance[0].toUpperCase()+u.significance.slice(1)+' impact',rn(u.reg),u.headline+'\n'+u.detail,u.so_what,(/primary|secondary|tertiary/i.test(u.source_title)?u.source_title:u.source_title+' ('+tier(u)+')')]),
+        {0:{cellWidth:24},1:{cellWidth:22},2:{cellWidth:66},3:{cellWidth:45},4:{cellWidth:25,textColor:MUT,fontSize:8}},
+        {styles:Object.assign({},tableStyle.styles,{fontSize:8.5}),
+         didParseCell:h=>{ if(h.section==='body'&&h.column.index===0){ const u=ups[h.row.index]; h.cell.styles.textColor=INK; }},
+         didDrawCell:h=>{ if(h.section==='body'&&h.column.index===0){ const u=ups[h.row.index]; doc.setFillColor(...(SIGC[u.significance]||MUT)); doc.circle(h.cell.x+h.cell.width-1.6,h.cell.y+2.5,0.85,'F'); }}});
+      if(older.length){ y=doc.lastAutoTable.finalY+7; if(y>BOT-25){ doc.addPage(); y=TOP; }
+        y=heading(doc,'Earlier updates – headlines (full text in the dashboard)',M,y,PW-2*M);
+        table(doc,y,['Date','Rule','What happened','Source'],older.map(u=>[fmt(u.date),rn(u.reg),u.headline,(/primary|secondary|tertiary/i.test(u.source_title)?u.source_title:u.source_title+' ('+tier(u)+')')]),{0:{cellWidth:21},1:{cellWidth:28},3:{cellWidth:42,textColor:MUT,fontSize:7.5}},{styles:Object.assign({},tableStyle.styles,{fontSize:8.5,cellPadding:1})}); }
+    },
+    regs(st){
+      const doc=st.doc; let y=startTab(st,'regs');
+      const regs=sel();
+      const body=[]; const grpRows=new Set();
+      D.groups.forEach(g=>{ const rs=regs.filter(r=>r.group===g.id); if(!rs.length) return; grpRows.add(body.length); body.push([g.name,'','','','']);
+        rs.forEach(r=>body.push([r.short, r.status_label, (CONF[r.confidence.level]||r.confidence.level)+(r.verified?'':'\n(not yet verified)'), r.next_milestone, r.check?fmt(r.check.date):'-'])); });
+      table(doc,y,['Rule','Where it stands','Confidence','Next milestone','Checked'],body,
+        {0:{cellWidth:34},1:{cellWidth:68},2:{cellWidth:21},3:{cellWidth:40},4:{cellWidth:19}},
+        {styles:Object.assign({},tableStyle.styles,{fontSize:8.5}),
+         didParseCell:h=>{ if(h.section!=='body') return; if(grpRows.has(h.row.index)){ h.cell.styles.fillColor=GL; h.cell.styles.textColor=G; h.cell.styles.fontStyle='bold'; if(h.column.index===0) h.cell.colSpan=5; }
+           else if(h.column.index===2){ const lv=(h.cell.raw||'').split('\n')[0]; h.cell.styles.fontStyle='bold'; h.cell.styles.textColor = lv==='Confirmed'?[30,122,76]:lv==='High'?[29,78,158]:lv==='Medium'?[168,98,11]:MUT; }
+           else if(h.column.index===0){ h.cell.styles.fontStyle='bold'; } }});
+      const openIds=[...document.querySelectorAll('details.reg[open]')].map(e=>e.id.replace(/^reg-/,''));
+      const opened=regs.filter(r=>openIds.includes(r.id));
+      if(!opened.length) return;
+      let yy=doc.lastAutoTable.finalY+8;
+      const txt=(t,o)=>{ o=o||{}; const s=o.size||10, lh=s*0.42+0.45, ind=o.indent||0, w=PW-2*M-ind;
+        doc.setFont('helvetica',o.bold?'bold':'normal'); doc.setFontSize(s); doc.setTextColor(...(o.color||INK));
+        doc.splitTextToSize(clean(t),w).forEach((l,i)=>{ if(yy+lh>BOT){ doc.addPage(); yy=TOP; }
+          if(o.bullet&&i===0){ doc.setFillColor(...G); doc.circle(M+ind-2.6,yy+s*0.35-1.1,0.7,'F'); }
+          doc.text(l,M+ind,yy+s*0.35); yy+=lh; });
+        yy+=(o.after==null?1.4:o.after); };
+      const lab=t=>{ if(yy+12>BOT){ doc.addPage(); yy=TOP; } txt(t.toUpperCase(),{bold:true,size:8,color:G,after:0.6}); };
+      if(yy+40>BOT){ doc.addPage(); yy=TOP; }
+      yy=heading(doc,'Opened entries – full detail',M,yy,PW-2*M);
+      opened.forEach((r,ix)=>{
+        if(yy+45>BOT){ doc.addPage(); yy=TOP; }
+        doc.setFillColor(...GL); doc.rect(M,yy-1,PW-2*M,10,'F'); doc.setFillColor(...G); doc.rect(M,yy-1,1.4,10,'F');
+        doc.setFont('helvetica','bold'); doc.setFontSize(11); doc.setTextColor(...G); doc.text(clean(r.short+'  ('+r.de+')'),M+4,yy+5.4);
+        const right=clean(r.stat.value+' - '+r.stat.label+'  |  '+(CONF[r.confidence.level]||'')+' confidence');
+        doc.setFontSize(8.5); doc.text(right,PW-M-2,yy+5.4,{align:'right'});
+        yy+=13;
+        txt(r.status_label,{bold:true,after:1});
+        txt(r.summary+' ('+r.ref+')',{after:2.5});
+        lab('What matters'); r.key_points.forEach(k=>txt(k,{indent:4,bullet:true,after:0.8})); yy+=1.5;
+        lab('Why this confidence rating'); txt(r.confidence.reasoning+(r.verified?'':' Not yet verified against a primary source.'),{after:2.5});
+        lab('Next milestone'); txt(r.next_milestone,{after:2.5});
+        if(r.check){ lab('Last checked'); txt(fmt(r.check.date)+' - '+r.check.note,{after:2.5}); }
+        if(r.compliance){ lab('Who it applies to'); txt(r.compliance.applies_to,{after:2.5});
+          lab("If you don't comply"); txt(r.compliance.max_penalty,{bold:true,after:0.8}); r.compliance.consequences.forEach(c=>txt(c,{indent:4,bullet:true,after:0.8})); yy+=1.5; }
+        if(r.law&&r.law.length){ lab(r.group==='standards'?'Read the standard':'Read the law text'); r.law.forEach(l=>txt(l.title+' - '+l.url,{indent:4,bullet:true,size:8.5,color:MUT,after:0.6})); yy+=1.5; }
+        lab('Sources'); r.sources.forEach(s=>{ const t=stype(s.url).indexOf('Primary')>-1?'primary':stype(s.url).indexOf('Tertiary')>-1?'tertiary':'secondary';
+          txt(s.title+(/primary|secondary|tertiary/i.test(s.title)?'':' ('+t+')')+' - '+s.url,{indent:4,bullet:true,size:8.5,color:MUT,after:0.6}); });
+        yy+=5;
+        if(ix<opened.length-1){ doc.setDrawColor(...RULE); doc.setLineWidth(0.3); doc.line(M,yy-2.5,PW-M,yy-2.5); }
+      });
+    },
+    timeline(st){
+      const doc=st.doc; let y=startTab(st,'timeline');
+      // ---- chart: one page ----
+      const regsC=sel(); const LX=M+38, RX=PW-M, Y1=2026, Y2=2031;
+      const hx=c=>{ const n=parseInt(c.replace('#',''),16); return [(n>>16)&255,(n>>8)&255,n&255]; };
+      const xOf=s=>{ const d=parse(s), a=new Date(Y1,0,1), b=new Date(Y2,0,1); return LX+(d-a)/(b-a)*(RX-LX); };
+      doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(...MUT);
+      doc.text(clean('Key dates 2026-2030. Filled = fixed date, hollow = expected or conditional, large = major milestone. Red line = today.'),M,y); y+=6;
+      const top=y+6, legendH=10, laneH=Math.min(11,(BOT-legendH-top)/Math.max(regsC.length,1)), bottom=top+laneH*regsC.length;
+      for(let yr=Y1; yr<Y2; yr++){ const x=xOf(yr+'-01-01'), x2=xOf((yr+1)+'-01-01');
+        if((yr-Y1)%2===0){ doc.setFillColor(...GT); doc.rect(x,top,x2-x,bottom-top,'F'); }
+        doc.setDrawColor(...RULE); doc.setLineWidth(0.25); doc.line(x,top-6,x,bottom);
+        doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(...G); doc.text(String(yr),x+1.5,top-1.8); }
+      doc.setDrawColor(...G); doc.setLineWidth(0.4); doc.line(LX,top,RX,top);
+      regsC.forEach((r,i)=>{ const cy=top+laneH*(i+0.5), col=hx(r.color);
+        doc.setDrawColor(...RULE); doc.setLineWidth(0.15); doc.line(M,top+laneH*(i+1),RX,top+laneH*(i+1));
+        doc.setFillColor(...col); doc.rect(M,cy-1.3,2.6,2.6,'F');
+        doc.setFont('helvetica','bold'); doc.setFontSize(8.5); doc.setTextColor(...INK);
+        const nm=doc.splitTextToSize(clean(r.short),LX-M-6); doc.text(nm.slice(0,2),M+4,cy+(nm.length>1?-0.6:1.1));
+        D.milestones.filter(m=>m.reg===r.id && m.date>=Y1+'-01-01' && m.date<Y2+'-01-01').forEach(m=>{
+          const cx=xOf(m.date), rr=m.big?2.3:1.7;
+          doc.setLineWidth(0.45); doc.setDrawColor(...col);
+          if(m.projected){ doc.setFillColor(255,255,255); } else { doc.setFillColor(...col); }
+          doc.lines([[rr,rr],[-rr,rr],[-rr,-rr],[rr,-rr]],cx,cy-rr,[1,1],'FD',true);
+        });
+      });
+      if(today>=new Date(Y1,0,1) && today<new Date(Y2,0,1)){ const tx=xOf(today.toISOString().slice(0,10));
+        doc.setDrawColor(198,47,59); doc.setLineWidth(0.6); doc.line(tx,top-6,tx,bottom);
+        doc.setFont('helvetica','bold'); doc.setFontSize(7.5); doc.setTextColor(198,47,59); doc.text('Today',tx+1,top-6.5); }
+      let lx=M, ly=bottom+7; doc.setFontSize(8.5); doc.setFont('helvetica','normal'); doc.setTextColor(...INK);
+      [['Fixed date',false,false],['Expected / conditional',true,false],['Major milestone',false,true]].forEach(([t,hol,big])=>{ const rr=big?2.3:1.7;
+        doc.setDrawColor(...G); doc.setLineWidth(0.45); if(hol) doc.setFillColor(255,255,255); else doc.setFillColor(...G);
+        doc.lines([[rr,rr],[-rr,rr],[-rr,-rr],[rr,-rr]],lx+rr,ly-rr-0.8,[1,1],'FD',true); doc.text(t,lx+2*rr+2,ly); lx+=2*rr+6+doc.getTextWidth(t)+6; });
+      doc.setDrawColor(198,47,59); doc.setLineWidth(0.6); doc.line(lx,ly-3.5,lx,ly+0.5); doc.text('Today',lx+2,ly);
+      // ---- table on following pages ----
+      doc.addPage(); y=TOP;
+      y=heading(doc,'All milestones',M,y,PW-2*M);
+      const ms=D.milestones.filter(m=>active.has(m.reg)).sort((a,b)=>a.date.localeCompare(b.date));
+      const body=[], yr=new Set(); let cur='';
+      ms.forEach(m=>{ const Y=m.date.slice(0,4); if(Y!==cur){ cur=Y; yr.add(body.length); body.push([Y,'','','']); }
+        body.push([fmt(m.date),rn(m.reg),m.label,m.done?'Done':m.projected?'Expected':(parse(m.date)<today?'Passed':'Fixed date')]); });
+      table(doc,y,['Date','Rule','Milestone','Status'],body,{0:{cellWidth:25},1:{cellWidth:38},3:{cellWidth:22}},
+        {styles:Object.assign({},tableStyle.styles,{fontSize:8.5,cellPadding:{top:1,bottom:1,left:1.6,right:1.6}}),
+         didParseCell:h=>{ if(h.section!=='body') return; if(yr.has(h.row.index)){ h.cell.styles.fillColor=GL; h.cell.styles.textColor=G; h.cell.styles.fontStyle='bold'; if(h.column.index===0) h.cell.colSpan=4; }
+           else if(h.column.index===3){ const v=h.cell.raw; h.cell.styles.textColor = v==='Done'?[30,122,76]:v==='Expected'?[168,98,11]:INK;} }});
+    },
+    method(st){
+      const doc=st.doc; const f=new Flow(doc,startTab(st,'method'));
+      const root=document.querySelector('#v-method .prose');
+      [...root.children].forEach(el=>{
+        const t=el.tagName;
+        if(t==='H2'){ f.head(el.textContent); }
+        else if(t==='H3'){ f.lines(el.textContent,{bold:true,color:GM,after:0.6}); }
+        else if(t==='P'){ f.lines(el.textContent.replace(/\s+/g,' ').trim()); }
+        else if(t==='OL'||t==='UL'){ [...el.querySelectorAll('li')].forEach((li,i)=>f.lines((t==='OL'?(i+1)+'. ':'- ')+li.textContent.replace(/\s+/g,' ').trim(),{indent:2})); }
+        else if(el.querySelector && el.querySelector('table')){ el.querySelectorAll('tbody tr').forEach(tr=>{ const c=[...tr.children].map(td=>td.textContent.replace(/\s+/g,' ').trim()).filter(Boolean); if(!c.length) return; f.lines(c[0],{bold:true,size:9.5,after:0.2}); f.lines(c.slice(1).join(' - '),{size:9,color:MUT,after:1.6}); }); }
+      });
+    }
+  };
+
+  function finish(st){
+    const doc=st.doc, n=doc.getNumberOfPages(), exported=fmt(new Date().toISOString().slice(0,10));
+    const filtered = active.size < D.regulations.length ? '  |  Filtered view: '+active.size+' of '+D.regulations.length+' rules' : '';
+    for(let p=1;p<=n;p++){
+      doc.setPage(p);
+      let tab=''; st.tabStart.forEach(([s,name])=>{ if(p>=s) tab=name; });
+      doc.setFillColor(...G); doc.rect(0,0,PW,3.2,'F');
+      doc.setFont('helvetica','bold'); doc.setFontSize(12.5); doc.setTextColor(...G); doc.text('EU Sustainability Regulation Tracker',M,12.5);
+      doc.setFontSize(10); doc.setTextColor(...INK); doc.text(clean(tab),M,18.5);
+      doc.setFillColor(...GL); const lab='Data as of '+fmt(D.meta.last_updated); doc.setFont('helvetica','bold'); doc.setFontSize(9.5);
+      const lw=doc.getTextWidth(lab)+6; doc.roundedRect(PW-M-lw,8,lw,7,1.5,1.5,'F'); doc.setTextColor(...G); doc.text(lab,PW-M-3,12.8,{align:'right'});
+      doc.setDrawColor(...G); doc.setLineWidth(0.5); doc.line(M,22,PW-M,22);
+      doc.setDrawColor(...RULE); doc.setLineWidth(0.2); doc.line(M,PH-11,PW-M,PH-11);
+      doc.setFont('helvetica','normal'); doc.setFontSize(7.5); doc.setTextColor(...MUT);
+      doc.text(clean('Data as of '+fmt(D.meta.last_updated)+'  |  Exported '+exported+filtered+'  |  Public sources only. Not legal advice - check the linked law text before acting.'),M,PH-7);
+      doc.text('Page '+p+' of '+n,PW-M,PH-7,{align:'right'});
+    }
+  }
+
+  async function exportPdf(keys){
+    const status=document.getElementById('pdfstatus');
+    if(!window.jspdf || !window.jspdf.jsPDF){ status.textContent='The PDF tool did not load. Reload the page and try again.'; return; }
+    status.textContent='Building PDF…';
+    try{
+      const doc=new window.jspdf.jsPDF({unit:'mm',format:'a4',orientation:'portrait'});
+      const st={doc,started:false,tabStart:[]};
+      keys.forEach(k=>builders[k](st));
+      finish(st);
+      const name='EU-Regulation-Tracker_'+(keys.length>1?'all-tabs':TABNAMES[keys[0]].replace(/\s+/g,'-'))+'_'+D.meta.last_updated+'.pdf';
+      if(window.claude && typeof window.claude.use==='function'){
+        const dl=await window.claude.use('downloads');
+        if(!dl){ status.textContent='Saving files isn’t available in this view. Open the tracker in claude.ai to export.'; return; }
+        await dl.save({filename:name,data:doc.output('blob')});
+      } else { doc.save(name); }
+      status.textContent='Saved '+name;
+    }catch(e){
+      const c=e&&e.code;
+      status.textContent = c==='declined' ? 'Export cancelled.' : c==='rate_limited' ? 'A save prompt is already open – finish that one first.' : 'Export failed'+(e&&e.message?': '+e.message:'')+'.';
+    }
+  }
+  const curTab = () => (document.querySelector('.tabs button[aria-selected="true"]')||{}).dataset?.v || 'overview';
+  document.getElementById('pdfcur').addEventListener('click',()=>exportPdf([curTab()]));
+  document.getElementById('pdfall').addEventListener('click',()=>exportPdf(['overview','guide','updates','regs','timeline','method']));
+  const syncLabel=()=>{ document.getElementById('pdfcur').textContent='This tab ('+TABNAMES[curTab()]+')'; };
+  document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>setTimeout(syncLabel,0)));
+  syncLabel();
+  if(window.claude && typeof window.claude.use==='function'){ window.claude.use('downloads').then(dl=>{ if(!dl){ document.getElementById('pdfstatus').textContent='PDF export works when the tracker is opened in claude.ai.'; } }); }
+
+  }
 })();
 </script>
 </body>
