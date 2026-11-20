@@ -7169,7 +7169,8 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
   const today = new Date(); today.setHours(0,0,0,0);
   const parse = s => { const [y,m,d]=s.split('-').map(Number); return new Date(y,m-1,d); };
   const fmt = s => parse(s).toLocaleDateString(LANG==='de'?'de-AT':'en-GB',{day:'numeric',month:'short',year:'numeric'});
-  const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const MON = /(\b\d{1,2}\.?) (?=(Jän|Jänner|Feb|Februar|März|Mär|Apr|April|Mai|Juni|Juli|Aug|August|Sep|Sept|September|Okt|Oktober|Nov|November|Dez|Dezember|Jan|January|February|March|May|June|July|October|December)\b)/g;
+  const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])).replace(MON,'$1\u00a0').replace(/\bz\. B\./g,'z.\u00a0B.').replace(/\bu\. a\./g,'u.\u00a0a.').replace(/(Nr\.|Abs\.|Art\.|§) (?=\d)/g,'$1\u00a0');
   const OFFICIAL=['europa.eu','gv.at','wko.at','efrag.org','ghgprotocol.org','iso.org','gov.mt'];
   const TERTIARY=['packaging-journal.de','packagingrevolution.net','euwid-recycling.com','packagingeurope.com','packaging-gateway.com','ajot.com','carbon-pulse.com','esgtoday.com','esgnews.com','coolset.com','certivo.com','terrascope.com','cdxsystem.com','gpcgateway.com','carbonfact.com','cbamjournal.com','compliance-atlas.com','complianceandrisks.com','konfirmity.com','lappa.org','ppwr-packaging.com','punyam.com','trustrace.com','generalgas.eu','batteryregulation.eu','compliancegate.com','ppwrconnect.com','cbamguide.com','mlex.com','lovguiden.dk','eunews.it','orf.at','lawfinder.at','chemradar.com','derstandard.at'];
   const hit = (hst,list) => list.some(dm=>hst===dm||hst.endsWith('.'+dm));
@@ -7216,6 +7217,19 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
     document.querySelector('.tabs button[data-v="regs"]').click();
     const el=document.getElementById('reg-'+b.dataset.open); if(el){el.open=true; el.scrollIntoView({block:'start'});}
   });
+  // Split a paragraph into sentences without breaking at dates ("12. Nov."), numbers or abbreviations ("z. B.", "Nr.", "e.g.")
+  const ABBR = new Set(['jän','jan','feb','mär','märz','apr','mai','jun','jul','aug','sep','sept','okt','oct','nov','dez','dec','nr','abs','art','mio','mrd','ca','vs','bzw','st','dr','lit','inkl','ggf','evtl','usw','etc','approx','no','vgl','bgbl','abschn','kap','ziff','tsd']);
+  function splitSents(t){
+    const out=[]; let start=0; const re=/[.!?](?=\s+[„"“'(\[A-ZÄÖÜ0-9§])/g; let m;
+    while((m=re.exec(t))){
+      const i=m.index; const tok=((t.slice(start,i).match(/(\S+)$/)||['',''])[1]).replace(/^[(„"“'\[]+/,'');
+      const w=tok.toLowerCase();
+      if(t[i]==='.' && (/(^|[^\d])\d{1,2}$/.test(w) || ABBR.has(w) || /^[a-zäöü]$/i.test(w) || /\.[a-zäöü]+$/i.test(w))) continue;
+      out.push(t.slice(start,i+1).trim()); start=i+1;
+    }
+    const rest=t.slice(start).trim(); if(rest) out.push(rest);
+    return out.length?out:[t];
+  }
   const offBox = r => (r.official&&r.official.length) ? `<div class="offname"><h5>${T('Official name')}</h5><ul>${r.official.map(o=>`<li>${esc(o.title)}</li>`).join('')}</ul></div>` : '';
   const atCls = s => /^Transposed/.test(s)?'ok':/Partly/.test(s)?'part':/Overdue/.test(s)?'late':'open';
   const atBox = r => `<div class="atbox"><div class="athead"><h5>${T('Austrian transposition')}</h5><span class="atpill at-${atCls(EN(r.at,'status'))}">${esc(r.at.status)}</span><span class="atdl">${T('Deadline: ')}${esc(r.at.deadline)}</span></div>
@@ -7261,7 +7275,7 @@ table.pen td.mx{color:var(--ink);font-weight:600;min-width:180px}
     document.getElementById('updates').innerHTML = buckets.map(([name,fn])=>{
       const items = ups.filter(fn);
       return `<div class="bucket"><h3>${T(name)} (${items.length})</h3>${items.length? items.map(u=>{
-        const sents = u.detail.match(/[^.!?]+[.!?]+/g)||[u.detail];
+        const sents = splitSents(u.detail);
         return `<div class="upd"><div class="date">${fmt(u.date)}<span class="sig sig-${u.significance}">${impact(u.significance)}</span></div>
           <div>${regTag(u.reg)}<h4>${esc(u.headline)}</h4><ul>${sents.map(s=>`<li>${esc(s.trim())}</li>`).join('')}</ul>
           <a class="src" href="${esc(u.source_url)}" target="_blank" rel="noopener">${T('Source: ')}${esc(u.source_title)}</a> ${stype(u.source_url)}</div>
